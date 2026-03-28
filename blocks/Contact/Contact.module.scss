@@ -1,0 +1,213 @@
+// components/Contact/Contact.module.scss
+.contactSection {
+  margin-bottom: 64px;
+}
+
+.sectionHeading {
+  font-size: 26px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  scroll-margin-top: 80px;
+  color: var(--text);
+}
+
+.gradText {
+  background: linear-gradient(to right, var(--accent-from), var(--accent-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionDesc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.contactFormWrap {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+
+  :global(.dark) & {
+    background: #161617;
+    border-color: var(--border);
+  }
+}
+
+.formRow {
+  display: flex;
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.formGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--neutral-700);
+
+  :global(.dark) & {
+    color: var(--text-muted);
+  }
+}
+
+.req {
+  color: #ef4444;
+  cursor: help;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 8px 10px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color 0.15s;
+
+  :global(.dark) & {
+    border-color: var(--border);
+  }
+
+  &:focus {
+    border-color: var(--blue);
+  }
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 96px;
+  max-height: 160px;
+  margin-top: 8px;
+}
+
+.charCount {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-align: right;
+  margin-top: 4px;
+  opacity: 0.5;
+}
+
+.formSubmitRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.contactOr {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.contactLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: none;
+  text-decoration: none;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+}
+
+.btnArrow svg {
+  transition: transform 0.2s;
+}
+
+.btn:hover .btnArrow svg {
+  transform: translateX(3px);
+}
+
+.btnNeutral {
+  background: var(--neutral-200);
+  color: var(--neutral-700);
+
+  :global(.dark) & {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  &:hover:not(:disabled) {
+    background: var(--border-dark);
+
+    :global(.dark) & {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.btnOutline {
+  background: var(--bg);
+  color: var(--neutral-700);
+  border: 1px solid var(--border);
+
+  :global(.dark) & {
+    background: #161617;
+    color: white;
+    border-color: var(--border);
+  }
+
+  &:hover {
+    background: var(--bg2);
+
+    :global(.dark) & {
+      background: #202021;
+      border-color: var(--border-dark);
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

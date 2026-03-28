@@ -1,0 +1,52 @@
+// components/Footer/Footer.module.scss
+.footer {
+  max-width: 768px;
+  margin: 0 auto;
+  padding-bottom: 48px;
+}
+
+.footerHr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.footerCopy {
+  font-size: 13px;
+  color: var(--text-muted);
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+
+.footerCols {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.footerColTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.footerLink {
+  display: block;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  transition: color 0.12s;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--text);
+    text-decoration: underline;
+  }
+}

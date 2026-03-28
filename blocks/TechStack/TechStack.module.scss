@@ -1,0 +1,74 @@
+// components/TechStack/TechStack.module.scss
+.techSection {
+  margin-bottom: 64px;
+}
+
+.sectionHeading {
+  font-size: 26px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  scroll-margin-top: 80px;
+  color: var(--text);
+}
+
+.gradText {
+  background: linear-gradient(to right, var(--accent-from), var(--accent-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionDesc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.techCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.techItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+
+  :global(.dark) & {
+    border-color: var(--border);
+  }
+
+  &:hover {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border-dark);
+    
+    :global(.dark) & {
+      border-color: var(--border-dark);
+      background: rgba(255, 255, 255, 0.06);
+    }
+  }
+}
+
+.techEmoji {
+  font-size: 14px;
+}
+
+.techMore {
+  font-size: 13px;
+  color: var(--text-dim);
+  text-align: center;
+  margin-top: 12px;
+}

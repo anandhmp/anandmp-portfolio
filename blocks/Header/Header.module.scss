@@ -1,0 +1,98 @@
+// components/Header/Header.module.scss
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 36px 0 24px;
+  background: transparent;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navLogo {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin-right: 24px;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.gradText {
+  background: linear-gradient(to right, var(--accent-from), var(--accent-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navLinks {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.navLink {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all 0.15s;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+
+  &:hover {
+    background: var(--surface);
+    color: var(--text);
+  }
+
+  &.active {
+    background: var(--surface);
+    color: var(--text);
+  }
+}
+
+.navSpacer {
+  flex: 1;
+}
+
+.navActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.themeBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.15s;
+
+  &:hover {
+    background: var(--surface);
+    color: var(--text);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}

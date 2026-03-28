@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://www.skillhaara.com/sitemap.xml
+Host: https://www.skillhaara.com
