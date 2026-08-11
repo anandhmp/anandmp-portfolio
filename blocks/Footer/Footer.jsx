@@ -25,10 +25,10 @@ const Footer = () => {
                 {/* Brand & Copyright */}
                 <div className={styles.brandCol}>
                     <h3 className={styles.brandTitle}>
-                        Suhaib SZ<span className="text-gradient">.</span>
+                        Anand<span className="text-gradient">.</span>
                     </h3>
                     <p className={styles.copyrightText}>
-                        Copyright © 2021 - 2026 Suhaib SZ
+                        Copyright © 2020 - 2026 Anand
                     </p>
                 </div>
 

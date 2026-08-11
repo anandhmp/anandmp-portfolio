@@ -109,7 +109,7 @@ const Contact = () => {
             <div className={styles.socialConnectSection}>
                 <p className={styles.connectLabel}>Or contact me with...</p>
                 <div className={styles.socialGrid}>
-                    <a href="mailto:suhaib@pronexus.in" className={styles.socialPill}>
+                    <a href="mailto:anandmpmtd@gmail.com" className={styles.socialPill}>
                         <AtSign size={16} className={styles.pillIcon} />
                         <span>Email</span>
                         <ArrowRight size={14} className={styles.pillArrow} />

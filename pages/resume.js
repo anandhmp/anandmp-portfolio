@@ -20,7 +20,7 @@ export default function ResumePage() {
                             Interactive Resume<span style={{ color: '#3b82f6' }}>.</span>
                         </h1>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontFamily: 'var(--font-mono)' }}>
-                            Suhaib SZ — Full-Stack Engineer & Founder
+                            Anand — Full-Stack Engineer & Founder
                         </p>
                     </div>
 
@@ -51,13 +51,13 @@ export default function ResumePage() {
                 <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '1.25rem', padding: '2rem', backdropFilter: 'blur(12px)' }}>
                     <div style={{ marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1.5rem' }}>
                         <h2 style={{ fontSize: '1.4rem', fontWeight: 800, fontFamily: 'var(--font-mono)', color: 'var(--text-primary)', marginBottom: '0.25rem' }}>
-                            Suhaib SZ
+                            Anand MP
                         </h2>
                         <p style={{ color: '#3b82f6', fontSize: '0.95rem', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>
                             Full-Stack Software Engineer & Founder @ Pronexus
                         </p>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', fontFamily: 'var(--font-mono)', marginTop: '0.5rem' }}>
-                            Bangalore, India • 5+ Years Experience • suhaib@pronexus.in
+                            Trivandrum, Kerala, India • 5+ Years Experience • anandmpmtd@gmail.com
                         </p>
                     </div>
 

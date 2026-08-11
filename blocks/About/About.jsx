@@ -12,7 +12,7 @@ const About = () => {
   experienceYears: 5,
   coreSkills: ["React / Next.js", "Node.js / NestJS", "Cloud Architecture"],
   passion: "Transforming ambitious ideas into production-grade SaaS products.",
-  status: "Building Percify.io & Available for projects"
+  status: "Building Webstrike.in & Available for projects"
 };`;
         navigator.clipboard.writeText(text);
         setCopied(true);
