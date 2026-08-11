@@ -211,13 +211,13 @@ const Projects = () => {
             {!showAllProjects && router.pathname !== '/work' && (
                 <div className={styles.moreProjectsSection}>
                     <p className={styles.moreText}>Want to see more?</p>
-                    <button
-                        onClick={() => setShowAllProjects(true)}
+                    <Link
+                        href="/work"
                         className={styles.moreProjectsBtn}
                     >
                         <span>More Projects</span>
                         <ArrowRight size={14} />
-                    </button>
+                    </Link>
                 </div>
             )}
 

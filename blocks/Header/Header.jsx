@@ -60,7 +60,7 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
         <nav className={`${styles.nav} ${scrolled ? styles.scrolledNav : ''}`}>
             <div className={styles.container}>
                 <Link href="/" className={styles.logo}>
-                    SZ<span className={styles.logoDot}>.</span>
+                    AM<span className={styles.logoDot}>.</span>
                 </Link>
 
                 <div className={styles.desktopNav}>

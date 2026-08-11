@@ -136,7 +136,7 @@
 
 .previewImage {
   width: 100%;
-  height: 250px;
+  height: 218px;
   object-fit: contain;
   object-position: center;
   // background: rgba(0, 0, 0, 0.2);
@@ -318,26 +318,75 @@
 .moreProjectsBtn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.6rem 1.35rem;
-  border-radius: 0.5rem;
-  background: var(--bg-subtle);
-  color: var(--text-primary);
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  font-size: 0.88rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
   font-weight: 500;
-  text-decoration: none;
+  cursor: pointer;
   font-family: var(--font-mono);
   transition: all 0.2s ease;
 
   &:hover {
-    background: var(--border-hover);
+    border-color: #3b82f6;
+    color: #3b82f6;
+    transform: translateX(3px);
+  }
+}
+
+@media (max-width: 640px) {
+  .projectsSection {
+    margin-bottom: 3rem;
   }
 
-  [data-theme='light'] & {
-    background: #e5e7eb;
-    border-color: transparent;
-    color: #374151;
+  .projectCard {
+    padding: 1.25rem;
+    gap: 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  .browserHeader {
+    height: 32px;
+    padding: 0 0.75rem;
+  }
+
+  .urlBar {
+    max-width: 55%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0.1rem 0.75rem;
+    font-size: 0.68rem;
+  }
+
+  .previewImage {
+    height: 190px;
+  }
+
+  .projectTitle {
+    font-size: 1.15rem;
+  }
+
+  .descText {
+    font-size: 0.82rem;
+  }
+
+  .actionButtons {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+
+    a,
+    button {
+      flex: 1;
+      min-width: 110px;
+      justify-content: center;
+      padding: 0.55rem 0.85rem;
+      font-size: 0.82rem;
+    }
   }
 }
 
