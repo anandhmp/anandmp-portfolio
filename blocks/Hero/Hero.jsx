@@ -9,13 +9,13 @@ const Hero = () => {
                 <div className={styles.bgWrapper}>
                     {/* Ambient blurred fill matching photo tones */}
                     <img
-                        src="/assets/me2.jpg"
+                        src="/assets/me4.png"
                         alt=""
                         className={styles.ambientBlurBg}
                     />
                     {/* Crisp portrait on right */}
                     <img
-                        src="/assets/me2.jpg"
+                        src="/assets/me4.png"
                         alt="Anand MP Portrait"
                         className={styles.bgImage}
                     />
