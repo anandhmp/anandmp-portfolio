@@ -97,7 +97,7 @@ const About = () => {
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span className={styles.string}>"Cloud & DevOps"</span>{'\n'}
                                     &nbsp;&nbsp;],{'\n'}
                                     &nbsp;&nbsp;<span className={styles.key}>passion</span>: <span className={styles.string}>"Shipping high-impact SaaS products."</span>,{'\n'}
-                                    &nbsp;&nbsp;<span className={styles.key}>status</span>: <span className={styles.string}>"🟢 Building Percify.io"</span>{'\n'}
+                                    &nbsp;&nbsp;<span className={styles.key}>status</span>: <span className={styles.string}>"🟢 Building webstrike.in"</span>{'\n'}
                                     &#125;;
                                 </code>
                             </pre>
@@ -109,7 +109,7 @@ const About = () => {
                         {/* Card 1: Total Projects */}
                         <div className={styles.miniStatCard}>
                             <div className={styles.miniCardTop}>
-                                <span className={styles.statVal}>111+</span>
+                                <span className={styles.statVal}>50+</span>
                                 <ChevronRight size={16} className={styles.miniCardIcon} />
                             </div>
                             <span className={styles.statLabel}>Total Projects</span>
@@ -130,7 +130,7 @@ const About = () => {
                                 <span className={styles.greenPulseDot}></span>
                                 <span className={styles.buildingLabel}>Currently Building</span>
                             </div>
-                            <h4 className={styles.buildingTitle}>Percify.io</h4>
+                            <h4 className={styles.buildingTitle}>webstrike.in</h4>
                         </div>
                     </div>
                 </div>

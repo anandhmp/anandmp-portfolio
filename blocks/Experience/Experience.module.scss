@@ -57,23 +57,12 @@
   }
 }
 
-.tsentaLogo {
-  font-size: 1.1rem;
-  font-weight: 900;
-  color: var(--text-primary);
-}
-
-.percifyLogo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pronexusLogo {
-  font-size: 1.35rem;
-  font-weight: 900;
-  color: #3b82f6;
-  font-family: var(--font-mono);
+.logoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  // border-radius: 50%;
 }
 
 .experienceCard {
@@ -157,16 +146,40 @@
 .companyLink {
   display: inline-flex;
   align-items: center;
-  gap: 0.2rem;
-  font-size: 0.88rem;
+  gap: 0.25rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: #3b82f6;
   text-decoration: none;
   font-family: var(--font-mono);
+  transition: color 0.2s ease;
 
   &:hover {
-    color: var(--text-primary);
+    color: #2563eb;
   }
+}
+
+.companyName {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #3b82f6;
+  font-family: var(--font-mono);
+}
+
+.companyLogoWrap {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.fullCompanyLogo {
+  height: 26px;
+  max-width: 180px;
+  object-fit: contain;
 }
 
 .metaGroup {

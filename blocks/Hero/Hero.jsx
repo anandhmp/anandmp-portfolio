@@ -7,9 +7,16 @@ const Hero = () => {
         <section id="home" className={styles.heroSection}>
             <div className={styles.heroCard}>
                 <div className={styles.bgWrapper}>
+                    {/* Ambient blurred fill matching photo tones */}
                     <img
                         src="/assets/me2.jpg"
-                        alt="Suhaib SZ Portrait"
+                        alt=""
+                        className={styles.ambientBlurBg}
+                    />
+                    {/* Crisp portrait on right */}
+                    <img
+                        src="/assets/me2.jpg"
+                        alt="Anand MP Portrait"
                         className={styles.bgImage}
                     />
                     <div className={styles.gradientOverlay}></div>
@@ -22,10 +29,10 @@ const Hero = () => {
                             About me
                         </h2>
                         <h1 className={styles.mainTitle}>
-                            <span className={styles.titleText}>hey, I'm Suhaib</span> <span className="animate-wave">👋</span>
+                            <span className={styles.titleText}>hey, I'm Anand</span> <span className="animate-wave">👋</span>
                         </h1>
                         <p className={styles.bioText}>
-                            FullStack Engineer from Bangalore building web applications, AI solutions, and real-world SaaS products that push the boundaries of technology.
+                            FullStack Engineer from Trivandrum, building web applications, Solutions, and real-world SaaS products that push the boundaries of technology.
                         </p>
                     </div>
 
@@ -35,10 +42,10 @@ const Hero = () => {
                             My Mission
                         </h2>
                         <p className={styles.missionText}>
-                            Bridging the Gap Between Design and Development: Where creativity meets functionality, and innovation drives progress.
+                            A jack of all trades, master of execution: Seamlessly connecting full-stack engineering, intuitive design, and AI innovation to deliver high-performance products.
                         </p>
                         <p className={styles.missionQuote}>
-                            Keep moving, don't settle. 🚀
+                            Jack of all trades, master of all. 🚀
                         </p>
                     </div>
                 </div>

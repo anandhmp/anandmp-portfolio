@@ -22,16 +22,18 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 1200) {
+            const threshold = router.pathname === '/' ? 450 : 150;
+            if (window.scrollY > threshold) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
             }
         };
 
+        handleScroll();
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [router.pathname]);
 
     const applyTheme = (newTheme) => {
         setTheme(newTheme);

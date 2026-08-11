@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from './Projects.module.scss';
-import { ExternalLink, Github, ArrowRight, FileText, ChevronDown, Camera, X, Sparkles, Cpu } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, FileText, ChevronDown, Camera, X, Sparkles, Code, Layers, Globe, ShoppingBag } from 'lucide-react';
 import {
     SiNextdotjs, SiReact, SiTypescript, SiTailwindcss,
-    SiPostgresql, SiExpress, SiPython, SiPytorch, SiTensorflow, SiDocker
+    SiPostgresql, SiExpress, SiNodedotjs
 } from 'react-icons/si';
 
 const Projects = () => {
+    const router = useRouter();
     const [selectedProject, setSelectedProject] = useState(null);
     const [expandedDesc, setExpandedDesc] = useState({});
+    const [showAllProjects, setShowAllProjects] = useState(router.pathname === '/work');
 
     const toggleExpand = (id) => {
         setExpandedDesc((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -16,65 +20,83 @@ const Projects = () => {
 
     const projects = [
         {
-            id: 'percify',
-            title: 'Percify - AI Avatar Generation Platform',
-            domain: 'percify.io',
-            period: 'October 30, 2025 - Present',
+            id: 'page-builder',
+            title: 'Page Builder & Page Editor',
+            domain: 'skartio.com',
+            period: 'May 2024 - Present',
             image: '/assets/projects/percify.png',
-            shortDesc: 'Percify is a cutting-edge AI-powered SaaS platform for creating the most photorealistic talking avatars from just a single image. The platform features...',
-            fullDesc: 'Percify is a cutting-edge AI-powered SaaS platform for creating the most photorealistic talking avatars from just a single image. The platform features advanced neural technology for perfect lip-sync, natural emotion expressions, voice cloning capabilities, and multi-language support across 25+ languages. Users can generate infinite-length talking videos with HD 4K output quality, making it perfect for content creators, marketers, game developers, and businesses.',
+            shortDesc: 'Fully customizable web page management system developed for Skartio’s SaaS platform. This tool was built to enable non-developers and business users to take full control of content and layouts...',
+            fullDesc: 'Fully customizable web page management system developed for Skartio’s SaaS platform. This tool was built to enable non-developers and business users to take full control of their website content and layout, eliminating the need for technical support.\n\nKey Capabilities:\n• Visual Drag-and-Drop Interface\n• Live Preview & Real-Time Editing\n• Theme Customization & Layout Controls\n• Page Management Tools & Built-in Analytics\n• SEO & Metadata Management\n• Instant No-Code Deployment',
             tech: [
                 { name: 'Next.js', icon: <SiNextdotjs /> },
                 { name: 'React', icon: <SiReact color="#61DAFB" /> },
                 { name: 'TypeScript', icon: <SiTypescript color="#3178C6" /> },
-                { name: 'TailwindCSS', icon: <SiTailwindcss color="#38BDF8" /> },
-                { name: 'OpenAI', icon: <Sparkles size={14} /> },
-                { name: 'PostgreSQL', icon: <SiPostgresql color="#4169E1" /> },
+                { name: 'Page Builder', icon: <Layers size={14} color="#38BDF8" /> },
+                { name: 'SEO & Analytics', icon: <Sparkles size={14} color="#EAB308" /> },
             ],
-            liveUrl: 'https://percify.io',
+            liveUrl: 'https://webstrike.in',
             caseStudyUrl: '#',
             layout: 'image-left'
         },
         {
-            id: 'nammasuraksha',
-            title: 'ByteCrew - NammaSuraksha (AI Scam & Phishing Detection)',
-            domain: 'github.com',
-            period: 'April 31, 2025 - Present',
+            id: 'customer-onboarding',
+            title: 'Customer Onboarding & Store Launcher',
+            domain: 'skartio.cloud',
+            period: 'May 2024 - Present',
             image: '/assets/projects/nammasuraksha.png',
-            shortDesc: 'NammaSuraksha is a cross-platform AI-powered scam and phishing detection system developed during the NammaSuraksha Hackathon 2025 by Team ByteCrew. It...',
-            fullDesc: "NammaSuraksha is a cross-platform AI-powered scam and phishing detection system developed during the NammaSuraksha Hackathon 2025 by Team ByteCrew. It intelligently detects malicious links and scam messages across web pages, emails, instant messaging platforms, social media, and SMS using OpenAI's GPT-4. Features include a Next.js web dashboard, React Native mobile app, and Chrome extension for live phishing alerts.",
+            shortDesc: 'Automated customer onboarding platform featuring live domain search, instant domain acquisition, tiered pricing model selection, and zero-downtime eCommerce store launching...',
+            fullDesc: 'End-to-end customer onboarding platform integrated with live domain search and instant domain acquisition APIs. Enables clients to search available domain names, acquire domains, submit registration details, select appropriate pricing plans, and instantly launch their targeted eCommerce store model (B2C, B2B, Dropshipping, Hybrid Commerce Cloud, Marketplace, or Enterprise Cloud flow) with zero technical friction.',
             tech: [
                 { name: 'Next.js', icon: <SiNextdotjs /> },
-                { name: 'React Native', icon: <SiReact color="#61DAFB" /> },
-                { name: 'Express.js', icon: <SiExpress /> },
-                { name: 'PostgreSQL', icon: <SiPostgresql color="#4169E1" /> },
-                { name: 'OpenAI', icon: <Sparkles size={14} /> },
+                { name: 'Domain Search API', icon: <Globe size={14} color="#38BDF8" /> },
+                { name: 'Automated Onboarding', icon: <Code size={14} color="#10B981" /> },
+                { name: 'B2B / B2C Cloud', icon: <ShoppingBag size={14} color="#F59E0B" /> },
+                { name: 'Node.js', icon: <SiNodedotjs color="#5FA04E" /> },
             ],
-            liveUrl: 'https://github.com/anandhmp',
-            githubUrl: 'https://github.com/anandhmp',
+            liveUrl: 'https://webstrike.in',
+            caseStudyUrl: '#',
             layout: 'image-right'
         },
         {
-            id: 'rap-ai',
-            title: 'AI Music Rap Generator - Research & Development',
-            domain: 'preview',
-            period: 'October 30, 2025 - Present',
+            id: 'unified-business',
+            title: 'Unified Business Solutions',
+            domain: 'webstrike.in',
+            period: 'May 2024 - Present',
             image: '/assets/projects/rapai.png',
-            imageBadge: '6',
-            shortDesc: 'An advanced AI-powered music generation system focused on rap music creation, developed as part of ongoing machine learning research. This project...',
-            fullDesc: 'An advanced AI-powered music generation system focused on rap music creation, developed as part of ongoing machine learning research. This project leverages Azure\'s cutting-edge ML infrastructure with sponsored NVIDIA A100 GPU engines to train and deploy sophisticated music generation models. The system utilizes the ACE (Audio Continuation Engine) step model architecture for high-quality music generation, capable of producing original rap beats, lyrics, and vocal synthesis.',
+            shortDesc: 'A comprehensive business management platform for small enterprises to manage lead pipelines, career portals, corporate blogs, and content without developer dependency...',
+            fullDesc: 'A unified digital management platform tailored for small and medium enterprises to manage lead generation pipelines, career application portals, corporate blogs, and marketing content seamlessly without any developer dependency.',
             tech: [
-                { name: 'Python', icon: <SiPython color="#3776AB" /> },
-                { name: 'Azure ML', icon: <SiNextdotjs /> },
-                { name: 'PyTorch', icon: <SiPytorch color="#EE4C2C" /> },
-                { name: 'NVIDIA A100', icon: <SiReact color="#76B900" /> },
-                { name: 'TensorFlow', icon: <SiTensorflow color="#FF6F00" /> },
-                { name: 'Docker', icon: <SiDocker color="#2496ED" /> },
+                { name: 'React', icon: <SiReact color="#61DAFB" /> },
+                { name: 'Next.js', icon: <SiNextdotjs /> },
+                { name: 'Lead Manager', icon: <Sparkles size={14} color="#38BDF8" /> },
+                { name: 'CMS Engine', icon: <FileText size={14} color="#10B981" /> },
             ],
+            liveUrl: 'https://webstrike.in',
             caseStudyUrl: '#',
             layout: 'image-left'
+        },
+        {
+            id: 'ecommerce-theme',
+            title: 'Customizable eCommerce Web Theme',
+            domain: 'webstrike.theme',
+            period: '2024 - Present',
+            image: '/assets/projects/percify.png',
+            shortDesc: 'A scalable and flexible eCommerce web application theme built with Next.js, featuring SEO optimization, PWA support, code splitting, image optimization, and built-in web analytics...',
+            fullDesc: 'A scalable and flexible eCommerce web application theme built with Next.js, featuring SEO optimization, PWA support, code splitting, image optimization, and built-in web analytics. Empowers non-developers to fully customize their storefronts without any developer dependency.',
+            tech: [
+                { name: 'Next.js', icon: <SiNextdotjs /> },
+                { name: 'PWA', icon: <Globe size={14} color="#38BDF8" /> },
+                { name: 'SEO Optimization', icon: <Sparkles size={14} color="#EAB308" /> },
+                { name: 'Web Analytics', icon: <Code size={14} color="#10B981" /> },
+                { name: 'eCommerce Engine', icon: <ShoppingBag size={14} color="#F59E0B" /> },
+            ],
+            liveUrl: 'https://webstrike.in',
+            caseStudyUrl: '#',
+            layout: 'image-right'
         }
     ];
+
+    const displayedProjects = (showAllProjects || router.pathname === '/work') ? projects : projects.slice(0, 3);
 
     const renderBrowserFrame = (proj) => (
         <div className={styles.browserFrame}>
@@ -165,11 +187,11 @@ const Projects = () => {
                 Featured Projects<span className={styles.blueDot}>.</span>
             </h2>
             <p className={styles.subtitle}>
-                Highlighting my latest work: AI research, security innovation, and full-stack development.
+                High-converting Page Builders, automated store launchers, and enterprise SaaS business platforms.
             </p>
 
             <div className={styles.projectsList}>
-                {projects.map((proj) => (
+                {displayedProjects.map((proj) => (
                     <div key={proj.id} className={styles.projectCard}>
                         {proj.layout === 'image-left' ? (
                             <>
@@ -186,18 +208,18 @@ const Projects = () => {
                 ))}
             </div>
 
-            <div className={styles.moreProjectsSection}>
-                <p className={styles.moreText}>Want to see more?</p>
-                <a
-                    href="https://github.com/anandhmp"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.moreProjectsBtn}
-                >
-                    <span>More Projects</span>
-                    <ArrowRight size={14} />
-                </a>
-            </div>
+            {!showAllProjects && router.pathname !== '/work' && (
+                <div className={styles.moreProjectsSection}>
+                    <p className={styles.moreText}>Want to see more?</p>
+                    <button
+                        onClick={() => setShowAllProjects(true)}
+                        className={styles.moreProjectsBtn}
+                    >
+                        <span>More Projects</span>
+                        <ArrowRight size={14} />
+                    </button>
+                </div>
+            )}
 
             {/* Case Study Modal */}
             {selectedProject && (
@@ -208,7 +230,9 @@ const Projects = () => {
                         </button>
                         <h2 className={styles.modalTitle}>{selectedProject.title}</h2>
                         <span className={styles.modalPeriod}>{selectedProject.period}</span>
-                        <p className={styles.modalBody}>{selectedProject.fullDesc}</p>
+                        <div style={{ whiteSpace: 'pre-wrap', lineHeight: 1.6, margin: '1rem 0' }}>
+                            {selectedProject.fullDesc}
+                        </div>
 
                         <div className={styles.techGrid} style={{ marginTop: '1.25rem' }}>
                             {selectedProject.tech.map((t, idx) => (
