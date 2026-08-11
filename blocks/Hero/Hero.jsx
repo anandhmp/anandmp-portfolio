@@ -42,7 +42,7 @@ const Hero = () => {
                             My Mission
                         </h2>
                         <p className={styles.missionText}>
-                            A jack of all trades, master of execution: Seamlessly connecting full-stack engineering, intuitive design, and AI innovation to deliver high-performance products.
+                            A jack of all trades, master of execution: Seamlessly connecting full-stack engineering, intuitive design to deliver high-performance products.
                         </p>
                         <p className={styles.missionQuote}>
                             Jack of all trades, master of all. 🚀
