@@ -1,222 +1,178 @@
-// components/Hero/Hero.module.scss
-.heroBanner {
+.heroSection {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.heroCard {
   position: relative;
   overflow: hidden;
-  border-radius: 24px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  aspect-ratio: 16 / 9;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  margin-bottom: 16px;
-
-  :global(.dark) & {
-    border-color: transparent;
-  }
-}
-
-.heroBgImg {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #1e293b 0%, #334155 40%, #475569 100%);
+  border-radius: 1.75rem;
+  // border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  min-height: 480px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-image: url("https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/ms-dhoni-285348317-16x9_0.jpeg?VersionId=R0Mtdmbe2vlQor6EH_NbB9rt81TSIN2H&size=690:388");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+  align-items: flex-end;
+  background-color: var(--bg-page);
+  background-clip: padding-box;
+  isolation: isolate;
 
-.avatarPlaceholder {
-  font-size: 200px;
-  opacity: 0.07;
-  user-select: none;
-  position: absolute;
-  right: -20px;
-  top: -20px;
-  font-weight: 900;
-  color: white;
-}
-
-.blob1 {
-  position: absolute;
-  top: 20%;
-  right: 15%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(99, 16, 255, 0.3), transparent 70%);
-  border-radius: 50%;
-}
-
-.blob2 {
-  position: absolute;
-  bottom: 10%;
-  right: 30%;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(
-    circle,
-    rgba(20, 145, 255, 0.25),
-    transparent 70%
-  );
-  border-radius: 50%;
-}
-
-.heroOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.92) 0%,
-    rgba(255, 255, 255, 0.65) 50%,
-    rgba(255, 255, 255, 0.15) 100%
-  );
-
-  :global(.dark) & {
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.82) 0%,
-      rgba(0, 0, 0, 0.58) 50%,
-      transparent 100%
-    );
+  @media (min-width: 768px) {
+    aspect-ratio: 16 / 9;
+    min-height: 520px;
   }
 }
 
-.heroContent {
+.bgWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 85% center;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(10, 10, 12, 0.95) 0%,
+      rgba(10, 10, 12, 0.75) 50%,
+      rgba(10, 10, 12, 0.25) 100%);
+
+  [data-theme='light'] & {
+    background: linear-gradient(to top,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0.3) 100%);
+  }
+
+  @media (min-width: 768px) {
+    background: linear-gradient(to right,
+        rgba(10, 10, 12, 0.92) 0%,
+        rgba(10, 10, 12, 0.75) 55%,
+        rgba(10, 10, 12, 0.1) 100%);
+
+    [data-theme='light'] & {
+      background: linear-gradient(to right,
+          rgba(255, 255, 255, 0.95) 0%,
+          rgba(255, 255, 255, 0.75) 55%,
+          rgba(255, 255, 255, 0.15) 100%);
+    }
+  }
+}
+
+.contentContainer {
   position: relative;
   z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
-  padding: 32px 40px;
-  max-width: 55%;
+  padding: 1.75rem;
+  width: 100%;
 
-  @media (max-width: 768px) {
-    max-width: 75%;
-    padding: 20px 24px;
-  }
-
-  @media (max-width: 520px) {
-    max-width: 100%;
+  @media (min-width: 768px) {
+    max-width: 60%;
+    padding: 2.5rem;
   }
 }
 
-.heroLabel {
+.textContent {
+  color: var(--text-primary);
+}
+
+.badgeLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
 }
 
-.heroTitle {
-  font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  color: var(--neutral-800);
-  margin-bottom: 12px;
+.iconMargin {
+  margin-right: 0.5rem;
 }
 
-.wave {
-  display: inline-block;
-  margin-left: 8px;
-  // animation: wave 2.5s ease-in-out infinite;
-}
+.mainTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 
-@keyframes wave {
-  0%,
-  100% {
-    transform: rotate(0deg);
+  @media (min-width: 640px) {
+    font-size: 2.75rem;
   }
-  30% {
-    transform: rotate(20deg);
-  }
-  60% {
-    transform: rotate(-10deg);
+
+  @media (min-width: 1024px) {
+    font-size: 3.25rem;
   }
 }
 
-.heroDesc {
-  font-size: 14px;
+.titleText {
+  white-space: nowrap;
+}
+
+.bioText {
+  font-size: 1rem;
   font-weight: 300;
-  line-height: 1.65;
-  color: var(--text-muted);
-  margin-bottom: 20px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+
+  @media (min-width: 640px) {
+    font-size: 1.1rem;
+  }
 }
 
 .missionCard {
-  background: rgba(15, 15, 15, 0.82);
+  background: rgba(22, 22, 24, 0.85);
   backdrop-filter: blur(12px);
-  border-radius: 16px;
-  padding: 16px 20px;
-  color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 
-  :global(.dark) & {
-    background: rgba(255, 255, 255, 0.08);
+  [data-theme='light'] & {
+    background: rgba(18, 18, 20, 0.9);
+    color: #ffffff;
   }
 }
 
 .missionLabel {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
+  font-size: 0.78rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 8px;
-  opacity: 0.7;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  color: #a1a1aa;
 }
 
 .missionText {
-  font-size: 13px;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.5;
+  color: #e4e4e7;
 }
 
-.missionTagline {
-  font-size: 13px;
+.missionQuote {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
   font-style: italic;
-  margin-top: 8px;
-  opacity: 0.8;
-}
-
-.bottomDiv {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.bottomDiv div {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-}
-
-.bottomDiv i {
-  font-size: 16px;
-  color: #9e9d9d;
-}
-
-.statItem {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.value {
-  font-weight: 600;
-}
-
-.label {
-  opacity: 0.7;
-  font-size: 13px;
+  color: var(--accent-teal);
 }

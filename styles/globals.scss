@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --bg-page: #0a0a0c;
+  --bg-card: rgba(22, 22, 24, 0.75);
+  --bg-card-hover: rgba(30, 30, 35, 0.85);
+  --bg-input: rgba(255, 255, 255, 0.05);
+  --bg-subtle: rgba(255, 255, 255, 0.08);
+
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.2);
+
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+
+  --accent-purple: #6310ff;
+  --accent-blue: #1491ff;
+  --accent-teal: #a2facf;
+  --accent-gradient: linear-gradient(135deg, #a2facf 0%, #64acff 100%);
+  --accent-gradient-text: linear-gradient(90deg, #a2facf 0%, #64acff 100%);
+
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 25px rgba(99, 16, 255, 0.25);
+}
+
+[data-theme='light'] {
+  --bg-page: linear-gradient(135deg, #f5f7fa, #e4e8f0 25%, #faf5f0 50%, #f0f5fa 75%, #f5f7fa);
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(244, 244, 245, 0.95);
+  --bg-input: rgba(0, 0, 0, 0.04);
+  --bg-subtle: rgba(0, 0, 0, 0.06);
+
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.15);
+
+  --text-primary: #09090b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+
+  --accent-purple: #6310ff;
+  --accent-blue: #1491ff;
+  --accent-teal: #10b981;
+  --accent-gradient: linear-gradient(135deg, #6310ff 0%, #1491ff 100%);
+  --accent-gradient-text: linear-gradient(90deg, #6310ff 0%, #1491ff 100%);
+
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 25px rgba(99, 16, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-mono);
+  background: var(--bg-page);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.6;
+  // padding: 0 1.5rem;
+  background: var(--bg-page);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(161, 161, 170, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(161, 161, 170, 0.45);
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-gradient {
+  background: var(--accent-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-14deg);
+  }
+
+  60% {
+    transform: rotate(14deg);
+  }
+
+  80% {
+    transform: rotate(-4deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2s infinite ease-in-out;
+}
+
+/* Glassmorphism helpers */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-card);
+}
+
+.chip-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.chip-tag:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+}

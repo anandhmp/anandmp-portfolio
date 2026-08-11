@@ -1,211 +1,228 @@
-// components/Projects/Projects.jsx
 import React, { useState } from 'react';
 import styles from './Projects.module.scss';
+import { ExternalLink, Github, ArrowRight, FileText, ChevronDown, Camera, X, Sparkles, Cpu } from 'lucide-react';
+import {
+    SiNextdotjs, SiReact, SiTypescript, SiTailwindcss,
+    SiPostgresql, SiExpress, SiPython, SiPytorch, SiTensorflow, SiDocker
+} from 'react-icons/si';
 
 const Projects = () => {
-  const [expandedProjects, setExpandedProjects] = useState({});
+    const [selectedProject, setSelectedProject] = useState(null);
+    const [expandedDesc, setExpandedDesc] = useState({});
 
-  const projects = [
-    {
-      id: 1,
-      title: 'Percify — AI Avatar Generation Platform',
-      date: 'October 2025 — Present',
-      description: 'Percify is a cutting-edge AI-powered SaaS platform for creating the most photorealistic talking avatars from just a single image. Features advanced neural technology for perfect lip-sync, natural emotion expressions, voice cloning, and multi-language support across 25+ languages.',
-      platform: 'Web',
-      tech: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'OpenAI', 'PostgreSQL'],
-      liveUrl: 'https://percify.io',
-      caseStudy: '#',
-      previewBg: 'linear-gradient(135deg, #dbeafe, #f0f9ff, #ede9fe)',
-    },
-    {
-      id: 2,
-      title: 'ByteCrew — NammaSuraksha (AI Scam & Phishing Detection)',
-      date: 'April 2025 — Present',
-      description: 'A cross-platform AI-powered scam and phishing detection system built during NammaSuraksha Hackathon 2025. Intelligently detects malicious links and scam messages using OpenAI\'s GPT-4. Includes a Next.js dashboard, React Native app, and Chrome extension.',
-      platform: 'Web + Mobile',
-      tech: ['Next.js', 'React Native', 'Express.js', 'PostgreSQL', 'OpenAI'],
-      liveUrl: 'https://github.com/Suhaib3100/bytecrew-nammasuraksha',
-      githubUrl: 'https://github.com/Suhaib3100/bytecrew-nammasuraksha',
-      previewBg: 'linear-gradient(135deg, #dcfce7, #f0fdf4, #dbeafe)',
-    },
-    {
-      id: 3,
-      title: 'AI Music Rap Generator — Research & Development',
-      date: 'October 2025 — Present',
-      description: 'An advanced AI-powered music generation system for rap creation, leveraging Azure ML with NVIDIA A100 GPUs. Uses the ACE step model architecture for high-quality music generation — original beats, lyrics, and vocal synthesis.',
-      platform: 'Research',
-      tech: ['Python', 'Azure ML', 'PyTorch', 'NVIDIA A100', 'Docker'],
-      caseStudy: '#',
-      previewBg: 'linear-gradient(135deg, #fef3c7, #fff7ed, #ede9fe)',
-    },
-  ];
+    const toggleExpand = (id) => {
+        setExpandedDesc((prev) => ({ ...prev, [id]: !prev[id] }));
+    };
 
-  const toggleReadMore = (id) => {
-    setExpandedProjects(prev => ({ ...prev, [id]: !prev[id] }));
-  };
+    const projects = [
+        {
+            id: 'percify',
+            title: 'Percify - AI Avatar Generation Platform',
+            domain: 'percify.io',
+            period: 'October 30, 2025 - Present',
+            image: '/assets/projects/percify.png',
+            shortDesc: 'Percify is a cutting-edge AI-powered SaaS platform for creating the most photorealistic talking avatars from just a single image. The platform features...',
+            fullDesc: 'Percify is a cutting-edge AI-powered SaaS platform for creating the most photorealistic talking avatars from just a single image. The platform features advanced neural technology for perfect lip-sync, natural emotion expressions, voice cloning capabilities, and multi-language support across 25+ languages. Users can generate infinite-length talking videos with HD 4K output quality, making it perfect for content creators, marketers, game developers, and businesses.',
+            tech: [
+                { name: 'Next.js', icon: <SiNextdotjs /> },
+                { name: 'React', icon: <SiReact color="#61DAFB" /> },
+                { name: 'TypeScript', icon: <SiTypescript color="#3178C6" /> },
+                { name: 'TailwindCSS', icon: <SiTailwindcss color="#38BDF8" /> },
+                { name: 'OpenAI', icon: <Sparkles size={14} /> },
+                { name: 'PostgreSQL', icon: <SiPostgresql color="#4169E1" /> },
+            ],
+            liveUrl: 'https://percify.io',
+            caseStudyUrl: '#',
+            layout: 'image-left'
+        },
+        {
+            id: 'nammasuraksha',
+            title: 'ByteCrew - NammaSuraksha (AI Scam & Phishing Detection)',
+            domain: 'github.com',
+            period: 'April 31, 2025 - Present',
+            image: '/assets/projects/nammasuraksha.png',
+            shortDesc: 'NammaSuraksha is a cross-platform AI-powered scam and phishing detection system developed during the NammaSuraksha Hackathon 2025 by Team ByteCrew. It...',
+            fullDesc: "NammaSuraksha is a cross-platform AI-powered scam and phishing detection system developed during the NammaSuraksha Hackathon 2025 by Team ByteCrew. It intelligently detects malicious links and scam messages across web pages, emails, instant messaging platforms, social media, and SMS using OpenAI's GPT-4. Features include a Next.js web dashboard, React Native mobile app, and Chrome extension for live phishing alerts.",
+            tech: [
+                { name: 'Next.js', icon: <SiNextdotjs /> },
+                { name: 'React Native', icon: <SiReact color="#61DAFB" /> },
+                { name: 'Express.js', icon: <SiExpress /> },
+                { name: 'PostgreSQL', icon: <SiPostgresql color="#4169E1" /> },
+                { name: 'OpenAI', icon: <Sparkles size={14} /> },
+            ],
+            liveUrl: 'https://github.com/anandhmp',
+            githubUrl: 'https://github.com/anandhmp',
+            layout: 'image-right'
+        },
+        {
+            id: 'rap-ai',
+            title: 'AI Music Rap Generator - Research & Development',
+            domain: 'preview',
+            period: 'October 30, 2025 - Present',
+            image: '/assets/projects/rapai.png',
+            imageBadge: '6',
+            shortDesc: 'An advanced AI-powered music generation system focused on rap music creation, developed as part of ongoing machine learning research. This project...',
+            fullDesc: 'An advanced AI-powered music generation system focused on rap music creation, developed as part of ongoing machine learning research. This project leverages Azure\'s cutting-edge ML infrastructure with sponsored NVIDIA A100 GPU engines to train and deploy sophisticated music generation models. The system utilizes the ACE (Audio Continuation Engine) step model architecture for high-quality music generation, capable of producing original rap beats, lyrics, and vocal synthesis.',
+            tech: [
+                { name: 'Python', icon: <SiPython color="#3776AB" /> },
+                { name: 'Azure ML', icon: <SiNextdotjs /> },
+                { name: 'PyTorch', icon: <SiPytorch color="#EE4C2C" /> },
+                { name: 'NVIDIA A100', icon: <SiReact color="#76B900" /> },
+                { name: 'TensorFlow', icon: <SiTensorflow color="#FF6F00" /> },
+                { name: 'Docker', icon: <SiDocker color="#2496ED" /> },
+            ],
+            caseStudyUrl: '#',
+            layout: 'image-left'
+        }
+    ];
 
-  return (
-    <section id="projects" className={styles.projectsSection}>
-      <h2 className={styles.sectionHeading}>
-        Featured Projects<span className={styles.gradText}>.</span>
-      </h2>
-      <p className={styles.sectionDesc}>
-        Highlighting my latest work: AI research, security innovation, and full-stack development.
-      </p>
-
-      {projects.map(project => (
-        <div key={project.id} className={styles.projectCard}>
-          <div className={styles.projectInner}>
-            <div className={styles.projectPreview} style={{ background: project.previewBg }}>
-              <div className={styles.platformBadge}>💻 {project.platform}</div>
-              <div className={styles.browserChrome}>
-                <div className={styles.browserBar}>
-                  <div className={styles.trafficLights}>
-                    <div className={`${styles.tl} ${styles.tlRed}`}></div>
-                    <div className={`${styles.tl} ${styles.tlYellow}`}></div>
-                    <div className={`${styles.tl} ${styles.tlGreen}`}></div>
-                  </div>
-                  <div className={styles.urlBar}>
-                    {project.liveUrl ? new URL(project.liveUrl).hostname : 'project.demo'}
-                  </div>
+    const renderBrowserFrame = (proj) => (
+        <div className={styles.browserFrame}>
+            <div className={styles.browserHeader}>
+                <div className={styles.browserDots}>
+                    <span className={`${styles.dot} ${styles.redDot}`}></span>
+                    <span className={`${styles.dot} ${styles.yellowDot}`}></span>
+                    <span className={`${styles.dot} ${styles.greenDot}`}></span>
                 </div>
-                <div className={styles.browserContent}>
-                  <div className={styles.browserMockupInner}>
-                    <div className={styles.mockupScreen}>
-                      <div className={styles.mockupNav}>
-                        <div className={styles.mockupNavDot}></div>
-                        <div className={styles.mockupNavDot} style={{ width: '16px' }}></div>
-                      </div>
-                      <div className={styles.mockupHero}>
-                        <span style={{ fontSize: '18px' }}>
-                          {project.id === 1 && '🤖'}
-                          {project.id === 2 && '🛡️'}
-                          {project.id === 3 && '🎵'}
-                        </span>
-                      </div>
-                      <div className={styles.mockupGrid}>
-                        <div className={styles.mockupCard}></div>
-                        <div className={styles.mockupCard}></div>
-                        <div className={styles.mockupCard}></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.hoverOverlay}>
-                    <svg viewBox="0 0 24 24">
-                      <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
-                      <circle cx="12" cy="12" r="3" />
-                    </svg>
-                    <span>Click to view</span>
-                  </div>
-                </div>
-              </div>
+                <div className={styles.urlBar}>{proj.domain}</div>
             </div>
-            <div className={styles.projectBody}>
-              <div>
-                <div className={styles.projectDate}>{project.date}</div>
-                <h3 className={styles.projectTitle}>{project.title}</h3>
-                <p 
-                  className={styles.projectDesc}
-                  style={{
-                    WebkitLineClamp: expandedProjects[project.id] ? 'unset' : 3,
-                  }}
-                >
-                  {project.description}
-                </p>
-                <button 
-                  className={styles.readMore}
-                  onClick={() => toggleReadMore(project.id)}
-                >
-                  {expandedProjects[project.id] ? '↑ Read less' : '↓ Read more'}
-                </button>
-                <div className={styles.techHeading}>Technologies</div>
-                <div className={styles.techPills}>
-                  {project.tech.map(tech => (
-                    <div key={tech} className={styles.techPill}>
-                      {tech === 'Next.js' && '▲'}
-                      {tech === 'React' && '⚛'}
-                      {tech === 'TypeScript' && '🔷'}
-                      {tech === 'Tailwind' && '💨'}
-                      {tech === 'OpenAI' && '🤖'}
-                      {tech === 'PostgreSQL' && '🐘'}
-                      {tech === 'React Native' && '📱'}
-                      {tech === 'Express.js' && '⚡'}
-                      {tech === 'Python' && '🐍'}
-                      {tech === 'Azure ML' && '☁️'}
-                      {tech === 'PyTorch' && '🔥'}
-                      {tech === 'NVIDIA A100' && '🖥️'}
-                      {tech === 'Docker' && '🐳'}
-                      {tech}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className={styles.projectActions}>
-                {project.liveUrl && (
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnBlue}`}>
-                    <svg viewBox="0 0 24 24">
-                      <path d="M15 3h6v6" />
-                      <path d="M10 14 21 3" />
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    </svg>
-                    View Live
-                    <span className={styles.btnArrow}>
-                      <svg viewBox="0 0 24 24">
-                        <path d="M5 12h14" />
-                        <path d="m12 5 7 7-7 7" />
-                      </svg>
+            <div className={styles.browserBody}>
+                <img src={proj.image} alt={proj.title} className={styles.previewImage} />
+                {proj.imageBadge && (
+                    <span className={styles.imgBadge}>
+                        <Camera size={12} /> {proj.imageBadge}
                     </span>
-                  </a>
                 )}
-                {project.githubUrl && (
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnNeutral}`}>
-                    <svg viewBox="0 0 25 25" fill="currentColor" style={{ width: '14px', height: '14px' }}>
-                      <path fillRule="evenodd" d="M12.5103 0C5.59245 0 0 5.72914 0 12.8169C0 18.4825 3.58327 23.2783 8.55422 24.9757C9.17572 25.1033 9.40337 24.6999 9.40337 24.3606C9.40337 24.0634 9.38289 23.045 9.38289 21.9838C5.90281 22.7478 5.17812 20.4559 5.17812 20.4559C4.61885 18.9705 3.79018 18.5887 3.79018 18.5887C2.65116 17.8036 3.87315 17.8036 3.87315 17.8036C5.13663 17.8885 5.79961 19.1192 5.79961 19.1192C6.9179 21.0713 8.7199 20.5197 9.44486 20.1801C9.54831 19.3525 9.87993 18.7796 10.232 18.4614C7.45642 18.1642 4.53613 17.0609 4.53613 12.1377C4.53613 10.7372 5.03292 9.59137 5.8201 8.70022C5.6959 8.382 5.26083 7.06612 5.94455 5.30493C5.94455 5.30493 7.00087 4.96534 9.38263 6.62055C10.4023 6.33999 11.454 6.19727 12.5103 6.19607C13.5667 6.19607 14.6435 6.34477 15.6378 6.62055C18.0198 4.96534 19.0761 5.30493 19.0761 5.30493C19.7599 7.06612 19.3245 8.382 19.2003 8.70022C20.0083 9.59137 20.4846 10.7372 20.4846 12.1377C20.4846 17.0609 17.5643 18.1429 14.7679 18.4614C15.2237 18.8645 15.6171 19.6283 15.6171 20.8379C15.6171 22.5567 15.5966 23.9361 15.5966 24.3603C15.5966 24.6999 15.8245 25.1033 16.4457 24.9759C21.4167 23.278 24.9999 18.4825 24.9999 12.8169C25.0204 5.72914 19.4075 0 12.5103 0Z" />
-                    </svg>
-                    GitHub
-                    <span className={styles.btnArrow}>
-                      <svg viewBox="0 0 24 24">
-                        <path d="M5 12h14" />
-                        <path d="m12 5 7 7-7 7" />
-                      </svg>
-                    </span>
-                  </a>
-                )}
-                {project.caseStudy && (
-                  <a href={project.caseStudy} className={`${styles.btn} ${styles.btnOutline}`}>
-                    <svg viewBox="0 0 24 24">
-                      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-                      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-                    </svg>
-                    Case Study
-                    <span className={styles.btnArrow}>
-                      <svg viewBox="0 0 24 24">
-                        <path d="M5 12h14" />
-                        <path d="m12 5 7 7-7 7" />
-                      </svg>
-                    </span>
-                  </a>
-                )}
-              </div>
             </div>
-          </div>
         </div>
-      ))}
+    );
 
-      <div className={styles.seeMoreWrap}>
-        <p className={styles.seeMoreText}>Want to see more?</p>
-        <a href="#" className={`${styles.btn} ${styles.btnNeutral}`}>
-          More Projects
-          <span className={styles.btnArrow}>
-            <svg viewBox="0 0 24 24">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </span>
-        </a>
-      </div>
-    </section>
-  );
+    const renderDetails = (proj) => (
+        <div className={styles.detailsCol}>
+            <h3 className={styles.projectTitle}>{proj.title}</h3>
+            <span className={styles.periodText}>{proj.period}</span>
+
+            <p className={styles.descText}>
+                {expandedDesc[proj.id] ? proj.fullDesc : proj.shortDesc}
+            </p>
+
+            <button
+                className={styles.readMoreBtn}
+                onClick={() => toggleExpand(proj.id)}
+            >
+                <span>{expandedDesc[proj.id] ? 'Read less' : 'Read more'}</span>
+                <ChevronDown size={14} className={`${styles.chevron} ${expandedDesc[proj.id] ? styles.rotated : ''}`} />
+            </button>
+
+            <div className={styles.techGrid}>
+                {proj.tech.map((t, idx) => (
+                    <div key={idx} className={styles.techTag}>
+                        <span className={styles.techIcon}>{t.icon}</span>
+                        <span>{t.name}</span>
+                    </div>
+                ))}
+            </div>
+
+            <div className={styles.actionButtons}>
+                {proj.liveUrl && (
+                    <a
+                        href={proj.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.viewLiveBtn}
+                    >
+                        <ExternalLink size={16} />
+                        <span>View Live</span>
+                    </a>
+                )}
+                {proj.githubUrl && (
+                    <a
+                        href={proj.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.secondaryBtn}
+                    >
+                        <Github size={16} />
+                        <span>GitHub</span>
+                    </a>
+                )}
+                {proj.caseStudyUrl && (
+                    <button
+                        onClick={() => setSelectedProject(proj)}
+                        className={styles.secondaryBtn}
+                    >
+                        <FileText size={16} />
+                        <span>Case study</span>
+                    </button>
+                )}
+            </div>
+        </div>
+    );
+
+    return (
+        <section id="projects" className={styles.projectsSection}>
+            <h2 className={styles.sectionTitle}>
+                Featured Projects<span className={styles.blueDot}>.</span>
+            </h2>
+            <p className={styles.subtitle}>
+                Highlighting my latest work: AI research, security innovation, and full-stack development.
+            </p>
+
+            <div className={styles.projectsList}>
+                {projects.map((proj) => (
+                    <div key={proj.id} className={styles.projectCard}>
+                        {proj.layout === 'image-left' ? (
+                            <>
+                                <div className={styles.frameCol}>{renderBrowserFrame(proj)}</div>
+                                {renderDetails(proj)}
+                            </>
+                        ) : (
+                            <>
+                                {renderDetails(proj)}
+                                <div className={styles.frameCol}>{renderBrowserFrame(proj)}</div>
+                            </>
+                        )}
+                    </div>
+                ))}
+            </div>
+
+            <div className={styles.moreProjectsSection}>
+                <p className={styles.moreText}>Want to see more?</p>
+                <a
+                    href="https://github.com/anandhmp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.moreProjectsBtn}
+                >
+                    <span>More Projects</span>
+                    <ArrowRight size={14} />
+                </a>
+            </div>
+
+            {/* Case Study Modal */}
+            {selectedProject && (
+                <div className={styles.modalOverlay} onClick={() => setSelectedProject(null)}>
+                    <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                        <button className={styles.closeBtn} onClick={() => setSelectedProject(null)}>
+                            <X size={20} />
+                        </button>
+                        <h2 className={styles.modalTitle}>{selectedProject.title}</h2>
+                        <span className={styles.modalPeriod}>{selectedProject.period}</span>
+                        <p className={styles.modalBody}>{selectedProject.fullDesc}</p>
+
+                        <div className={styles.techGrid} style={{ marginTop: '1.25rem' }}>
+                            {selectedProject.tech.map((t, idx) => (
+                                <div key={idx} className={styles.techTag}>
+                                    <span className={styles.techIcon}>{t.icon}</span>
+                                    <span>{t.name}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
+        </section>
+    );
 };
 
 export default Projects;

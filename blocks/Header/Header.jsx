@@ -1,29 +1,48 @@
-// components/Header/Header.jsx
 import React, { useState, useEffect } from 'react';
 import styles from './Header.module.scss';
+import {
+    AlignLeft, Settings, ChevronDown, ChevronRight, Sun, Moon,
+    X, Github, Image, Send, Sparkles, ArrowRight, ChevronsUpDown
+} from 'lucide-react';
 
-const Header = () => {
-    const [isDark, setIsDark] = useState(false);
+const Header = ({ displayDecorations, setDisplayDecorations }) => {
+    const [theme, setTheme] = useState('dark');
     const [activeSection, setActiveSection] = useState('home');
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [moreOpen, setMoreOpen] = useState(false);
+    const [settingsOpen, setSettingsOpen] = useState(false);
 
     useEffect(() => {
-        const saved = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const darkMode = saved ? saved === 'dark' : prefersDark;
-        setIsDark(darkMode);
-        document.documentElement.className = darkMode ? 'dark' : 'light';
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        applyTheme(savedTheme);
     }, []);
 
-    const toggleTheme = () => {
-        const newDark = !isDark;
-        setIsDark(newDark);
-        document.documentElement.className = newDark ? 'dark' : 'light';
-        localStorage.setItem('theme', newDark ? 'dark' : 'light');
+    const applyTheme = (newTheme) => {
+        setTheme(newTheme);
+        let actualTheme = newTheme;
+        if (newTheme === 'system') {
+            actualTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', actualTheme);
+        if (actualTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        } else {
+            document.documentElement.classList.add('light');
+            document.documentElement.classList.remove('dark');
+        }
+        localStorage.setItem('theme', newTheme);
     };
 
-    const handleNavClick = (section) => {
-        setActiveSection(section);
-        const element = document.getElementById(section);
+    const handleThemeChange = (e) => {
+        applyTheme(e.target.value);
+    };
+
+    const handleNavClick = (sectionId) => {
+        setActiveSection(sectionId);
+        setMobileMenuOpen(false);
+        setMoreOpen(false);
+        const element = document.getElementById(sectionId);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
@@ -31,8 +50,8 @@ const Header = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['home', 'projects', 'tech', 'contact'];
-            const scrollPosition = window.scrollY + 100;
+            const sections = ['home', 'about', 'experience', 'projects', 'tech', 'contact'];
+            const scrollPosition = window.scrollY + 120;
 
             for (const section of sections) {
                 const element = document.getElementById(section);
@@ -54,51 +73,179 @@ const Header = () => {
     return (
         <nav className={styles.nav}>
             <div className={styles.container}>
-                <a href="#" className={styles.navLogo}>
-                    SZ<span className={styles.gradText}>.</span>
+                <a href="#home" onClick={(e) => { e.preventDefault(); handleNavClick('home'); }} className={styles.logo}>
+                    SZ<span className={styles.logoDot}>.</span>
                 </a>
-                <div className={styles.navLinks}>
+
+                <div className={styles.desktopNav}>
                     <button
                         onClick={() => handleNavClick('home')}
-                        className={`${styles.navLink} ${activeSection === 'home' ? styles.active : ''}`}
+                        className={`${styles.navItem} ${activeSection === 'home' ? styles.active : ''}`}
                     >
                         Home
                     </button>
                     <button
                         onClick={() => handleNavClick('projects')}
-                        className={`${styles.navLink} ${activeSection === 'projects' ? styles.active : ''}`}
+                        className={`${styles.navItem} ${activeSection === 'projects' ? styles.active : ''}`}
                     >
                         My work
                     </button>
                     <button
-                        onClick={() => handleNavClick('tech')}
-                        className={`${styles.navLink} ${activeSection === 'tech' ? styles.active : ''}`}
+                        onClick={() => handleNavClick('experience')}
+                        className={`${styles.navItem} ${activeSection === 'experience' ? styles.active : ''}`}
                     >
-                        Tech
+                        Experience
                     </button>
-                    <button
-                        onClick={() => handleNavClick('contact')}
-                        className={`${styles.navLink} ${activeSection === 'contact' ? styles.active : ''}`}
-                    >
-                        Contact
-                    </button>
-                </div>
-                <div className={styles.navSpacer}></div>
-                <div className={styles.navActions}>
-                    <button className={styles.themeBtn} onClick={toggleTheme} title="Toggle theme">
-                        {isDark ? (
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <circle cx="12" cy="12" r="4" />
-                                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-                            </svg>
-                        ) : (
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                            </svg>
+                    <div className={styles.moreDropdownWrapper}>
+                        <button
+                            onClick={() => setMoreOpen(!moreOpen)}
+                            className={`${styles.navItem} ${styles.moreBtn} ${moreOpen ? styles.activeMore : ''}`}
+                        >
+                            <span>More</span>
+                            <ChevronDown className={`${styles.chevron} ${moreOpen ? styles.rotated : ''}`} size={16} />
+                        </button>
+
+                        {/* More Popover Menu */}
+                        {moreOpen && (
+                            <div className={styles.popoverMenu}>
+                                <a
+                                    href="https://github.com/anandhmp"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.popoverItem}
+                                    onClick={() => setMoreOpen(false)}
+                                >
+                                    <div className={styles.popoverIconBox}>
+                                        <Github size={20} />
+                                    </div>
+                                    <div className={styles.popoverText}>
+                                        <h4 className={styles.popoverTitle}>My Github Profile</h4>
+                                        <p className={styles.popoverDesc}>Explore my projects and contributions on GitHub.</p>
+                                    </div>
+                                </a>
+
+                                <a
+                                    href="#projects"
+                                    className={styles.popoverItem}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleNavClick('projects');
+                                    }}
+                                >
+                                    <div className={styles.popoverIconBox}>
+                                        <Image size={20} />
+                                    </div>
+                                    <div className={styles.popoverText}>
+                                        <h4 className={styles.popoverTitle}>Photography Portfolio</h4>
+                                        <p className={styles.popoverDesc}>View my collection of photographs and visual art.</p>
+                                    </div>
+                                </a>
+
+                                <a
+                                    href="#contact"
+                                    className={styles.popoverItem}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleNavClick('contact');
+                                    }}
+                                >
+                                    <div className={styles.popoverIconBox}>
+                                        <Send size={20} />
+                                    </div>
+                                    <div className={styles.popoverText}>
+                                        <h4 className={styles.popoverTitle}>Contact Me</h4>
+                                        <p className={styles.popoverDesc}>Have any questions? Feel free to reach out to me.</p>
+                                    </div>
+                                </a>
+                            </div>
                         )}
+                    </div>
+                </div>
+
+                <div className={styles.navSpacer}></div>
+
+                <div className={styles.actions}>
+                    <button
+                        onClick={() => setSettingsOpen(true)}
+                        className={styles.settingsBtn}
+                        aria-label="Open settings"
+                        title="Settings"
+                    >
+                        <Settings size={20} className={styles.settingsIcon} />
+                    </button>
+
+                    <button
+                        className={styles.mobileMenuBtn}
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        aria-label="Toggle menu"
+                    >
+                        {mobileMenuOpen ? <X size={24} /> : <AlignLeft size={24} />}
                     </button>
                 </div>
             </div>
+
+            {/* Mobile Drawer */}
+            {mobileMenuOpen && (
+                <div className={styles.mobileDrawer}>
+                    <button onClick={() => handleNavClick('home')}>Home</button>
+                    <button onClick={() => handleNavClick('projects')}>My work</button>
+                    <button onClick={() => handleNavClick('experience')}>Experience</button>
+                    <button onClick={() => handleNavClick('about')}>About me</button>
+                    <button onClick={() => handleNavClick('tech')}>Tech Stack</button>
+                    <button onClick={() => handleNavClick('contact')}>Contact</button>
+                </div>
+            )}
+
+            {/* Settings Modal */}
+            {settingsOpen && (
+                <div className={styles.modalOverlay} onClick={() => setSettingsOpen(false)}>
+                    <div className={styles.settingsModal} onClick={(e) => e.stopPropagation()}>
+                        <div className={styles.modalHeader}>
+                            <Settings size={22} className={styles.modalIcon} />
+                            <h2>Settings</h2>
+                        </div>
+                        <p className={styles.modalSubtitle}>
+                            Here you can change your settings, like website theme or decorations.
+                        </p>
+
+                        <div className={styles.settingRow}>
+                            <div className={styles.rowLabelGroup}>
+                                <Sun size={18} className={styles.rowIcon} />
+                                <span>Theme</span>
+                            </div>
+                            <div className={styles.selectWrapper}>
+                                <select value={theme} onChange={handleThemeChange} className={styles.themeSelect}>
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark</option>
+                                    <option value="system">System</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className={styles.settingRow}>
+                            <div className={styles.rowLabelGroup}>
+                                <Sparkles size={18} className={styles.rowIcon} />
+                                <span>Display decorations</span>
+                            </div>
+                            <label className={styles.toggleSwitch}>
+                                <input
+                                    type="checkbox"
+                                    checked={displayDecorations}
+                                    onChange={(e) => setDisplayDecorations(e.target.checked)}
+                                />
+                                <span className={styles.slider}></span>
+                            </label>
+                        </div>
+
+                        <div className={styles.modalFooter}>
+                            <button className={styles.closeModalBtn} onClick={() => setSettingsOpen(false)}>
+                                <span>Close</span>
+                                <ArrowRight size={16} />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };

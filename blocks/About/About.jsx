@@ -1,68 +1,142 @@
-// components/About/About.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './About.module.scss';
+import { ArrowRight, Github, ChevronRight, Layers, Copy, Check, Terminal } from 'lucide-react';
 
 const About = () => {
-  const stats = [
-    { number: '108+', label: 'Total Projects' },
-    { number: '3', label: 'Core SaaS Products' },
-  ];
+    const [copied, setCopied] = useState(false);
 
-  return (
-    <div className={styles.aboutSection}>
-      <h2 className={styles.sectionHeading}>
-        About me<span className={styles.gradText}>.</span>
-      </h2>
-      <p className={styles.aboutText}>
-        I started coding from scratch 5 years ago in 2020, beginning with HTML, CSS, and JavaScript to build websites.
-      </p>
-      <p className={styles.aboutText}>
-        My first project was a simple website built with HTML, CSS, and JavaScript (~mid-2020).
-      </p>
-      <p className={styles.aboutText}>
-        As I progressed, I mastered React.js and Next.js. Now, I work with all the latest tech stacks to build production-ready SaaS applications.
-      </p>
-      <div className={styles.aboutBtns}>
-        <a href="https://github.com/Suhaib3100" target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnBlue}`}>
-          <svg viewBox="0 0 25 25" fill="currentColor" style={{ width: '16px', height: '16px' }}>
-            <path fillRule="evenodd" d="M12.5103 0C5.59245 0 0 5.72914 0 12.8169C0 18.4825 3.58327 23.2783 8.55422 24.9757C9.17572 25.1033 9.40337 24.6999 9.40337 24.3606C9.40337 24.0634 9.38289 23.045 9.38289 21.9838C5.90281 22.7478 5.17812 20.4559 5.17812 20.4559C4.61885 18.9705 3.79018 18.5887 3.79018 18.5887C2.65116 17.8036 3.87315 17.8036 3.87315 17.8036C5.13663 17.8885 5.79961 19.1192 5.79961 19.1192C6.9179 21.0713 8.7199 20.5197 9.44486 20.1801C9.54831 19.3525 9.87993 18.7796 10.232 18.4614C7.45642 18.1642 4.53613 17.0609 4.53613 12.1377C4.53613 10.7372 5.03292 9.59137 5.8201 8.70022C5.6959 8.382 5.26083 7.06612 5.94455 5.30493C5.94455 5.30493 7.00087 4.96534 9.38263 6.62055C10.4023 6.33999 11.454 6.19727 12.5103 6.19607C13.5667 6.19607 14.6435 6.34477 15.6378 6.62055C18.0198 4.96534 19.0761 5.30493 19.0761 5.30493C19.7599 7.06612 19.3245 8.382 19.2003 8.70022C20.0083 9.59137 20.4846 10.7372 20.4846 12.1377C20.4846 17.0609 17.5643 18.1429 14.7679 18.4614C15.2237 18.8645 15.6171 19.6283 15.6171 20.8379C15.6171 22.5567 15.5966 23.9361 15.5966 24.3603C15.5966 24.6999 15.8245 25.1033 16.4457 24.9759C21.4167 23.278 24.9999 18.4825 24.9999 12.8169C25.0204 5.72914 19.4075 0 12.5103 0Z" />
-          </svg>
-          View my Github
-          <span className={styles.btnArrow}>
-            <svg viewBox="0 0 24 24">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </span>
-        </a>
-        <a href="#contact" className={`${styles.btn} ${styles.btnNeutral}`}>
-          Contact me
-          <span className={styles.btnArrow}>
-            <svg viewBox="0 0 24 24">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </span>
-        </a>
-      </div>
+    const handleCopy = () => {
+        const text = `const developer = {
+  name: "Anand MP",
+  title: "Full-Stack Engineer & Founder",
+  experienceYears: 5,
+  coreSkills: ["React / Next.js", "Node.js / NestJS", "Cloud Architecture"],
+  passion: "Transforming ambitious ideas into production-grade SaaS products.",
+  status: "Building Percify.io & Available for projects"
+};`;
+        navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
 
-      <div className={styles.miniStats}>
-        {stats.map((stat, idx) => (
-          <div key={idx} className={styles.miniStat}>
-            <div className={styles.miniStatNum}>{stat.number}</div>
-            <div className={styles.miniStatLabel}>{stat.label}</div>
-          </div>
-        ))}
-        <div className={`${styles.miniStat} ${styles.miniStatBuilding}`}>
-          <div className={styles.buildingStatus}>
-            <div className={styles.pulseDot}></div>
-            <div className={styles.buildingLabel}>Currently Building</div>
-          </div>
-          <div className={styles.buildingName}>Percify.io</div>
-        </div>
-      </div>
-    </div>
-  );
+    return (
+        <section id="about" className={styles.aboutSection}>
+            <div className={styles.gridContainer}>
+                {/* Left Column: Text & CTAs */}
+                <div className={styles.leftCol}>
+                    <h2 className={styles.sectionTitle}>
+                        About me<span className={styles.blueDot}>.</span>
+                    </h2>
+
+                    <div className={styles.prose}>
+                        <p>
+                            I started coding from scratch 5 years ago in 2020, beginning with HTML, CSS, and JavaScript to build websites.
+                        </p>
+                        <p>
+                            My first project was a simple website built with HTML, CSS, and JavaScript (~mid-2020).
+                        </p>
+                        <p>
+                            As I progressed, I mastered React.js and Next.js. Now, I work with all the latest tech stacks to build production-ready SaaS applications.
+                        </p>
+                    </div>
+
+                    <div className={styles.ctaGroup}>
+                        <a
+                            href="https://github.com/anandhmp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.githubBtn}
+                        >
+                            <Github size={18} className={styles.btnIcon} />
+                            <span>View my Github</span>
+                            <ArrowRight size={16} className={styles.arrowIcon} />
+                        </a>
+
+                        <a href="#contact" className={styles.contactBtn}>
+                            <span>Contact me</span>
+                            <ArrowRight size={16} className={styles.arrowIcon} />
+                        </a>
+                    </div>
+                </div>
+
+                {/* Right Column: Creative Developer Code Card + 3 Stats Cards */}
+                <div className={styles.rightCol}>
+                    {/* Creative Developer Bio Code Window */}
+                    <div className={styles.codeCard}>
+                        {/* Terminal Window Header */}
+                        <div className={styles.windowHeader}>
+                            <div className={styles.windowDots}>
+                                <span className={`${styles.dot} ${styles.redDot}`}></span>
+                                <span className={`${styles.dot} ${styles.yellowDot}`}></span>
+                                <span className={`${styles.dot} ${styles.greenDot}`}></span>
+                            </div>
+                            <div className={styles.windowTitle}>
+                                <Terminal size={13} />
+                                <span>aboutMe.ts</span>
+                            </div>
+                            <button className={styles.copyBtn} onClick={handleCopy} title="Copy code snippet">
+                                {copied ? <Check size={13} color="#10b981" /> : <Copy size={13} />}
+                            </button>
+                        </div>
+
+                        {/* Code Body */}
+                        <div className={styles.codeBody}>
+                            <pre className={styles.codeSnippet}>
+                                <code>
+                                    <span className={styles.comment}>/**</span>{'\n'}
+                                    <span className={styles.comment}> * @developer Anand MP</span>{'\n'}
+                                    <span className={styles.comment}> * @role Full-Stack Architect & Founder</span>{'\n'}
+                                    <span className={styles.comment}> */</span>{'\n'}{'\n'}
+                                    <span className={styles.keyword}>const</span> <span className={styles.variable}>developer</span> = &#123;{'\n'}
+                                    &nbsp;&nbsp;<span className={styles.key}>name</span>: <span className={styles.string}>"Anand MP"</span>,{'\n'}
+                                    &nbsp;&nbsp;<span className={styles.key}>title</span>: <span className={styles.string}>"Full-Stack Engineer & SaaS Builder"</span>,{'\n'}
+                                    &nbsp;&nbsp;<span className={styles.key}>experience</span>: <span className={styles.number}>5</span> <span className={styles.comment}>// Years since 2020</span>,{'\n'}
+                                    &nbsp;&nbsp;<span className={styles.key}>coreSkills</span>: [{'\n'}
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span className={styles.string}>"React / Next.js"</span>,{'\n'}
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span className={styles.string}>"Node.js / NestJS"</span>,{'\n'}
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span className={styles.string}>"Cloud & DevOps"</span>{'\n'}
+                                    &nbsp;&nbsp;],{'\n'}
+                                    &nbsp;&nbsp;<span className={styles.key}>passion</span>: <span className={styles.string}>"Shipping high-impact SaaS products."</span>,{'\n'}
+                                    &nbsp;&nbsp;<span className={styles.key}>status</span>: <span className={styles.string}>"🟢 Building Percify.io"</span>{'\n'}
+                                    &#125;;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+
+                    {/* 3 Stats Cards Row */}
+                    <div className={styles.statsGrid}>
+                        {/* Card 1: Total Projects */}
+                        <div className={styles.miniStatCard}>
+                            <div className={styles.miniCardTop}>
+                                <span className={styles.statVal}>111+</span>
+                                <ChevronRight size={16} className={styles.miniCardIcon} />
+                            </div>
+                            <span className={styles.statLabel}>Total Projects</span>
+                        </div>
+
+                        {/* Card 2: Core SaaS Products */}
+                        <div className={styles.miniStatCard}>
+                            <div className={styles.miniCardTop}>
+                                <span className={styles.statVal}>3</span>
+                                <Layers size={16} className={styles.miniCardIcon} />
+                            </div>
+                            <span className={styles.statLabel}>Core SaaS Products</span>
+                        </div>
+
+                        {/* Card 3: Currently Building */}
+                        <div className={`${styles.miniStatCard} ${styles.buildingCard}`}>
+                            <div className={styles.buildingHeader}>
+                                <span className={styles.greenPulseDot}></span>
+                                <span className={styles.buildingLabel}>Currently Building</span>
+                            </div>
+                            <h4 className={styles.buildingTitle}>Percify.io</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default About;

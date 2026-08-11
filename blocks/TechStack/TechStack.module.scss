@@ -1,74 +1,75 @@
-// components/TechStack/TechStack.module.scss
 .techSection {
-  margin-bottom: 64px;
+  margin-bottom: 4.5rem;
+  width: 100%;
 }
 
-.sectionHeading {
-  font-size: 26px;
-  font-weight: 750;
-  letter-spacing: -0.03em;
-  margin-bottom: 8px;
-  scroll-margin-top: 80px;
-  color: var(--text);
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
 }
 
-.gradText {
-  background: linear-gradient(to right, var(--accent-from), var(--accent-to));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.blueDot {
+  color: #3b82f6;
 }
 
-.sectionDesc {
-  font-size: 14px;
-  color: var(--text-muted);
-  margin-bottom: 20px;
+.subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  font-family: var(--font-mono);
+  line-height: 1.6;
 }
 
-.techCloud {
+.techGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 16px;
+  gap: 0.65rem;
+  margin-bottom: 2.5rem;
 }
 
-.techItem {
-  display: flex;
+.techBadge {
+  display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 5px 10px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  font-size: 13px;
+  gap: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 0.88rem;
   font-weight: 500;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all 0.15s;
-  text-decoration: none;
-
-  :global(.dark) & {
-    border-color: var(--border);
-  }
+  font-family: var(--font-mono);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
 
   &:hover {
-    background: var(--surface);
-    color: var(--text);
-    border-color: var(--border-dark);
-    
-    :global(.dark) & {
-      border-color: var(--border-dark);
-      background: rgba(255, 255, 255, 0.06);
-    }
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  [data-theme='light'] & {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #374151;
   }
 }
 
-.techEmoji {
-  font-size: 14px;
+.badgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
 }
 
-.techMore {
-  font-size: 13px;
-  color: var(--text-dim);
+.manyMoreText {
   text-align: center;
-  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-top: 1.5rem;
 }
