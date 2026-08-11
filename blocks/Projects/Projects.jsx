@@ -24,7 +24,7 @@ const Projects = () => {
             title: 'Page Builder & Page Editor',
             domain: 'skartio.com',
             period: 'May 2024 - Present',
-            image: '/assets/projects/percify.png',
+            image: '/assets/projects/pagebuilder.png',
             shortDesc: 'Fully customizable web page management system developed for Skartio’s SaaS platform. This tool was built to enable non-developers and business users to take full control of content and layouts...',
             fullDesc: 'Fully customizable web page management system developed for Skartio’s SaaS platform. This tool was built to enable non-developers and business users to take full control of their website content and layout, eliminating the need for technical support.\n\nKey Capabilities:\n• Visual Drag-and-Drop Interface\n• Live Preview & Real-Time Editing\n• Theme Customization & Layout Controls\n• Page Management Tools & Built-in Analytics\n• SEO & Metadata Management\n• Instant No-Code Deployment',
             tech: [
@@ -43,7 +43,7 @@ const Projects = () => {
             title: 'Customer Onboarding & Store Launcher',
             domain: 'skartio.cloud',
             period: 'May 2024 - Present',
-            image: '/assets/projects/nammasuraksha.png',
+            image: '/assets/projects/onboarding.png',
             shortDesc: 'Automated customer onboarding platform featuring live domain search, instant domain acquisition, tiered pricing model selection, and zero-downtime eCommerce store launching...',
             fullDesc: 'End-to-end customer onboarding platform integrated with live domain search and instant domain acquisition APIs. Enables clients to search available domain names, acquire domains, submit registration details, select appropriate pricing plans, and instantly launch their targeted eCommerce store model (B2C, B2B, Dropshipping, Hybrid Commerce Cloud, Marketplace, or Enterprise Cloud flow) with zero technical friction.',
             tech: [
@@ -62,7 +62,7 @@ const Projects = () => {
             title: 'Unified Business Solutions',
             domain: 'webstrike.in',
             period: 'May 2024 - Present',
-            image: '/assets/projects/rapai.png',
+            image: '/assets/projects/unified_business.png',
             shortDesc: 'A comprehensive business management platform for small enterprises to manage lead pipelines, career portals, corporate blogs, and content without developer dependency...',
             fullDesc: 'A unified digital management platform tailored for small and medium enterprises to manage lead generation pipelines, career application portals, corporate blogs, and marketing content seamlessly without any developer dependency.',
             tech: [
@@ -78,9 +78,9 @@ const Projects = () => {
         {
             id: 'ecommerce-theme',
             title: 'Customizable eCommerce Web Theme',
-            domain: 'webstrike.theme',
+            domain: 'stepzo.com',
             period: '2024 - Present',
-            image: '/assets/projects/percify.png',
+            image: '/assets/projects/ecommerce_theme.png',
             shortDesc: 'A scalable and flexible eCommerce web application theme built with Next.js, featuring SEO optimization, PWA support, code splitting, image optimization, and built-in web analytics...',
             fullDesc: 'A scalable and flexible eCommerce web application theme built with Next.js, featuring SEO optimization, PWA support, code splitting, image optimization, and built-in web analytics. Empowers non-developers to fully customize their storefronts without any developer dependency.',
             tech: [
