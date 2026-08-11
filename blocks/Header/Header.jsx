@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from './Header.module.scss';
 import {
-    AlignLeft, Settings, ChevronDown, ChevronRight, Sun, Moon,
-    X, Github, Image, Send, Sparkles, ArrowRight, ChevronsUpDown
+    AlignLeft, Settings, ChevronDown, Sun, Moon,
+    X, Github, Image, Send, Sparkles, ArrowRight
 } from 'lucide-react';
 
 const Header = ({ displayDecorations, setDisplayDecorations }) => {
+    const router = useRouter();
     const [theme, setTheme] = useState('dark');
-    const [activeSection, setActiveSection] = useState('home');
+    const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [moreOpen, setMoreOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
@@ -15,6 +18,19 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme') || 'dark';
         applyTheme(savedTheme);
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 1200) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const applyTheme = (newTheme) => {
@@ -38,64 +54,32 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
         applyTheme(e.target.value);
     };
 
-    const handleNavClick = (sectionId) => {
-        setActiveSection(sectionId);
-        setMobileMenuOpen(false);
-        setMoreOpen(false);
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const sections = ['home', 'about', 'experience', 'projects', 'tech', 'contact'];
-            const scrollPosition = window.scrollY + 120;
-
-            for (const section of sections) {
-                const element = document.getElementById(section);
-                if (element) {
-                    const offsetTop = element.offsetTop;
-                    const offsetHeight = element.offsetHeight;
-                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                        setActiveSection(section);
-                        break;
-                    }
-                }
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     return (
-        <nav className={styles.nav}>
+        <nav className={`${styles.nav} ${scrolled ? styles.scrolledNav : ''}`}>
             <div className={styles.container}>
-                <a href="#home" onClick={(e) => { e.preventDefault(); handleNavClick('home'); }} className={styles.logo}>
+                <Link href="/" className={styles.logo}>
                     SZ<span className={styles.logoDot}>.</span>
-                </a>
+                </Link>
 
                 <div className={styles.desktopNav}>
-                    <button
-                        onClick={() => handleNavClick('home')}
-                        className={`${styles.navItem} ${activeSection === 'home' ? styles.active : ''}`}
+                    <Link
+                        href="/"
+                        className={`${styles.navItem} ${router.pathname === '/' ? styles.active : ''}`}
                     >
                         Home
-                    </button>
-                    <button
-                        onClick={() => handleNavClick('projects')}
-                        className={`${styles.navItem} ${activeSection === 'projects' ? styles.active : ''}`}
+                    </Link>
+                    <Link
+                        href="/work"
+                        className={`${styles.navItem} ${router.pathname === '/work' ? styles.active : ''}`}
                     >
                         My work
-                    </button>
-                    <button
-                        onClick={() => handleNavClick('experience')}
-                        className={`${styles.navItem} ${activeSection === 'experience' ? styles.active : ''}`}
+                    </Link>
+                    <Link
+                        href="/experience"
+                        className={`${styles.navItem} ${router.pathname === '/experience' ? styles.active : ''}`}
                     >
                         Experience
-                    </button>
+                    </Link>
                     <div className={styles.moreDropdownWrapper}>
                         <button
                             onClick={() => setMoreOpen(!moreOpen)}
@@ -124,13 +108,10 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
                                     </div>
                                 </a>
 
-                                <a
-                                    href="#projects"
+                                <Link
+                                    href="/photography"
                                     className={styles.popoverItem}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        handleNavClick('projects');
-                                    }}
+                                    onClick={() => setMoreOpen(false)}
                                 >
                                     <div className={styles.popoverIconBox}>
                                         <Image size={20} />
@@ -139,15 +120,12 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
                                         <h4 className={styles.popoverTitle}>Photography Portfolio</h4>
                                         <p className={styles.popoverDesc}>View my collection of photographs and visual art.</p>
                                     </div>
-                                </a>
+                                </Link>
 
-                                <a
-                                    href="#contact"
+                                <Link
+                                    href="/contact"
                                     className={styles.popoverItem}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        handleNavClick('contact');
-                                    }}
+                                    onClick={() => setMoreOpen(false)}
                                 >
                                     <div className={styles.popoverIconBox}>
                                         <Send size={20} />
@@ -156,7 +134,7 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
                                         <h4 className={styles.popoverTitle}>Contact Me</h4>
                                         <p className={styles.popoverDesc}>Have any questions? Feel free to reach out to me.</p>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         )}
                     </div>
@@ -187,12 +165,11 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
             {/* Mobile Drawer */}
             {mobileMenuOpen && (
                 <div className={styles.mobileDrawer}>
-                    <button onClick={() => handleNavClick('home')}>Home</button>
-                    <button onClick={() => handleNavClick('projects')}>My work</button>
-                    <button onClick={() => handleNavClick('experience')}>Experience</button>
-                    <button onClick={() => handleNavClick('about')}>About me</button>
-                    <button onClick={() => handleNavClick('tech')}>Tech Stack</button>
-                    <button onClick={() => handleNavClick('contact')}>Contact</button>
+                    <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                    <Link href="/work" onClick={() => setMobileMenuOpen(false)}>My work</Link>
+                    <Link href="/experience" onClick={() => setMobileMenuOpen(false)}>Experience</Link>
+                    <Link href="/technology" onClick={() => setMobileMenuOpen(false)}>Tech Stack</Link>
+                    <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
                 </div>
             )}
 

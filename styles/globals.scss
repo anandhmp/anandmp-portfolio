@@ -57,6 +57,14 @@
   padding: 0;
 }
 
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  text-decoration: none !important;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: var(--font-mono);

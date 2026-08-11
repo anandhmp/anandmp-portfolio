@@ -1,17 +1,39 @@
 .nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: relative;
   width: 100%;
   padding-top: 1.25rem;
   padding-bottom: 0.75rem;
-  background: rgba(10, 10, 12, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  transition: background-color 0.3s ease, padding 0.3s ease;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
 
-  [data-theme='light'] & {
-    background: rgba(250, 250, 250, 0.85);
+  &.scrolledNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    animation: slideDown 0.3s ease forwards;
+
+    [data-theme='light'] & {
+      background: rgba(250, 250, 250, 0.85);
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 

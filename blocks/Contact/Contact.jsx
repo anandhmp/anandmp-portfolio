@@ -24,6 +24,8 @@ const Contact = () => {
         }, 1000);
     };
 
+    const isValid = name.trim().length > 0 && email.trim().length > 0 && email.includes('@') && message.trim().length > 0;
+
     return (
         <section id="contact" className={styles.contactSection}>
             <h2 className={styles.sectionTitle}>
@@ -93,7 +95,7 @@ const Contact = () => {
                         ) : (
                             <button
                                 type="submit"
-                                className={styles.submitBtn}
+                                className={`${styles.submitBtn} ${isValid ? styles.validBtn : ''}`}
                                 disabled={status === 'submitting'}
                             >
                                 <Send size={15} />
