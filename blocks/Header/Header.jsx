@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './Header.module.scss';
 import {
     AlignLeft, Settings, ChevronDown, Sun, Moon,
-    X, Github, Image, Send, Sparkles, ArrowRight
+    X, Github, Image, Send, Sparkles, ArrowRight,
+    Home, Briefcase, Award, Cpu, Camera, Globe
 } from 'lucide-react';
 
 const Header = ({ displayDecorations, setDisplayDecorations }) => {
@@ -14,12 +16,15 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [moreOpen, setMoreOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const is3D = router.pathname === '/3d';
 
     useEffect(() => {
+        setMounted(true);
         const savedTheme = localStorage.getItem('theme') || 'dark';
         applyTheme(savedTheme);
     }, []);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -170,16 +175,69 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
             {/* Mobile Drawer */}
             {mobileMenuOpen && (
                 <div className={styles.mobileDrawer}>
-                    <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-                    <Link href="/work" onClick={() => setMobileMenuOpen(false)}>My work</Link>
-                    <Link href="/experience" onClick={() => setMobileMenuOpen(false)}>Experience</Link>
-                    <Link href="/technology" onClick={() => setMobileMenuOpen(false)}>Tech Stack</Link>
-                    <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+                    <Link
+                        href="/"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`${styles.mobileLink} ${router.pathname === '/' ? styles.mobileActive : ''}`}
+                    >
+                        <Home size={16} className={styles.mobileIcon} />
+                        <span>Home</span>
+                    </Link>
+                    <Link
+                        href="/work"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`${styles.mobileLink} ${router.pathname === '/work' ? styles.mobileActive : ''}`}
+                    >
+                        <Briefcase size={16} className={styles.mobileIcon} />
+                        <span>My work</span>
+                    </Link>
+                    <Link
+                        href="/experience"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`${styles.mobileLink} ${router.pathname === '/experience' ? styles.mobileActive : ''}`}
+                    >
+                        <Award size={16} className={styles.mobileIcon} />
+                        <span>Experience</span>
+                    </Link>
+                    <Link
+                        href="/technology"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`${styles.mobileLink} ${router.pathname === '/technology' ? styles.mobileActive : ''}`}
+                    >
+                        <Cpu size={16} className={styles.mobileIcon} />
+                        <span>Tech Stack</span>
+                    </Link>
+                    <Link
+                        href="/photography"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`${styles.mobileLink} ${router.pathname === '/photography' ? styles.mobileActive : ''}`}
+                    >
+                        <Camera size={16} className={styles.mobileIcon} />
+                        <span>Photography</span>
+                    </Link>
+                    <Link
+                        href="/3d"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`${styles.mobileLink} ${router.pathname === '/3d' ? styles.mobileActive : ''}`}
+                    >
+                        <Globe size={16} className={styles.mobileIcon} />
+                        <span>3D World</span>
+                    </Link>
+                    <Link
+                        href="/contact"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`${styles.mobileLink} ${router.pathname === '/contact' ? styles.mobileActive : ''}`}
+                    >
+                        <Send size={16} className={styles.mobileIcon} />
+                        <span>Contact</span>
+                    </Link>
                 </div>
             )}
 
+
+
             {/* Settings Modal - Don't open on /3d */}
-            {settingsOpen && !is3D && (
+            {settingsOpen && !is3D && mounted && createPortal(
                 <div className={styles.modalOverlay} onClick={() => setSettingsOpen(false)}>
                     <div className={styles.settingsModal} onClick={(e) => e.stopPropagation()}>
                         <div className={styles.modalHeader}>
@@ -222,13 +280,15 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
                         <div className={styles.modalFooter}>
                             <button className={styles.closeModalBtn} onClick={() => setSettingsOpen(false)}>
                                 <span>Close</span>
-                                <ArrowRight size={16} />
+                                <ArrowRight size={15} />
                             </button>
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
         </nav>
+
     );
 };
 

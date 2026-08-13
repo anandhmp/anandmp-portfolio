@@ -32,6 +32,7 @@
   from {
     transform: translateY(-100%);
   }
+
   to {
     transform: translateY(0);
   }
@@ -255,30 +256,32 @@
 }
 
 .mobileDrawer {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  left: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem;
-  margin-top: 0.5rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 0.75rem;
-  backdrop-filter: blur(12px);
+  gap: 0.15rem;
+  padding: 0.45rem;
+  background: rgba(14, 14, 18, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.85rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6);
+  animation: mobileMenuFade 0.15s ease-out forwards;
 
-  button {
-    text-align: left;
-    padding: 0.6rem 1rem;
-    font-size: 0.95rem;
-    color: var(--text-primary);
-    background: transparent;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font-family: var(--font-mono);
+  [data-theme='light'] & {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.12);
+  }
 
-    &:hover {
-      background: var(--bg-subtle);
-    }
+  @media (max-width: 640px) {
+    left: 1rem;
+    right: 1rem;
   }
 
   @media (min-width: 769px) {
@@ -286,18 +289,95 @@
   }
 }
 
+@keyframes mobileMenuFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.48rem 0.75rem;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-primary) !important;
+  text-decoration: none !important;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: var(--text-primary) !important;
+  }
+
+  &:hover {
+    background: var(--bg-subtle);
+    color: var(--text-primary) !important;
+    border-color: var(--border-hover);
+  }
+
+  &.mobileActive {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    color: #60a5fa !important;
+
+    [data-theme='light'] & {
+      background: rgba(59, 130, 246, 0.12);
+      color: #2563eb !important;
+    }
+
+    .mobileIcon {
+      color: #60a5fa !important;
+
+      [data-theme='light'] & {
+        color: #2563eb !important;
+      }
+    }
+  }
+}
+
+.mobileIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+
+
+
+
 /* Settings Modal matching Screenshot 2 */
 .modalOverlay {
   position: fixed;
   inset: 0;
-  z-index: 200;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
 }
+
 
 .settingsModal {
   position: relative;
@@ -476,7 +556,7 @@ input:checked+.slider::before {
   background: var(--bg-subtle);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
   font-family: var(--font-mono);
