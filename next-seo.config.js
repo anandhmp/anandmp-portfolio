@@ -28,6 +28,10 @@ const SEO = {
   },
   additionalMetaTags: [
     {
+      name: "google-site-verification",
+      content: "v-vmMPcRDxY4vk5NylS9Bn8diUq_JZ8PlE7DkeouV_E",
+    },
+    {
       name: "keywords",
       content: "Anand MP, Full Stack Engineer, Web Developer, SaaS Developer, Next.js Developer, React, Trivandrum, Software Architect, Webstrike",
     },
@@ -40,6 +44,7 @@ const SEO = {
       content: "#0a0a0c",
     },
   ],
+
   additionalLinkTags: [
     {
       rel: "shortcut icon",
