@@ -14,6 +14,7 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [moreOpen, setMoreOpen] = useState(false);
     const [settingsOpen, setSettingsOpen] = useState(false);
+    const is3D = router.pathname === '/3d';
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -145,14 +146,16 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
                 <div className={styles.navSpacer}></div>
 
                 <div className={styles.actions}>
-                    <button
-                        onClick={() => setSettingsOpen(true)}
-                        className={styles.settingsBtn}
-                        aria-label="Open settings"
-                        title="Settings"
-                    >
-                        <Settings size={20} className={styles.settingsIcon} />
-                    </button>
+                    {!is3D && (
+                        <button
+                            onClick={() => setSettingsOpen(true)}
+                            className={styles.settingsBtn}
+                            aria-label="Open settings"
+                            title="Settings"
+                        >
+                            <Settings size={20} className={styles.settingsIcon} />
+                        </button>
+                    )}
 
                     <button
                         className={styles.mobileMenuBtn}
@@ -175,8 +178,8 @@ const Header = ({ displayDecorations, setDisplayDecorations }) => {
                 </div>
             )}
 
-            {/* Settings Modal */}
-            {settingsOpen && (
+            {/* Settings Modal - Don't open on /3d */}
+            {settingsOpen && !is3D && (
                 <div className={styles.modalOverlay} onClick={() => setSettingsOpen(false)}>
                     <div className={styles.settingsModal} onClick={(e) => e.stopPropagation()}>
                         <div className={styles.modalHeader}>

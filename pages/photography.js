@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../blocks/Header/Header';
 import Footer from '../blocks/Footer/Footer';
-import { Camera, Download, ExternalLink } from 'lucide-react';
+import { Camera } from 'lucide-react';
 
 export default function PhotographyPage() {
     const [displayDecorations, setDisplayDecorations] = useState(true);
@@ -51,25 +51,46 @@ export default function PhotographyPage() {
                         <div
                             key={idx}
                             style={{
-                                background: 'var(--bg-card)',
-                                border: '1px solid var(--border-color)',
-                                borderRadius: '1.25rem',
+                                position: 'relative',
+                                background: '#0a0a0c',
+                                border: 'none',
+                                borderRadius: '0',
                                 overflow: 'hidden',
-                                transition: 'all 0.2s ease',
+                                height: '320px',
+                                transition: 'all 0.3s ease',
+                                cursor: 'pointer',
                             }}
                         >
-                            <div style={{ position: 'relative', width: '100%', height: '240px', overflow: 'hidden' }}>
-                                <img
-                                    src={item.url}
-                                    alt={item.title}
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                />
-                            </div>
-                            <div style={{ padding: '1.25rem' }}>
-                                <span style={{ fontSize: '0.75rem', color: '#3b82f6', fontFamily: 'var(--font-mono)', fontWeight: 600, textTransform: 'uppercase' }}>
+                            <img
+                                src={item.url}
+                                alt={item.title}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                    display: 'block',
+                                    transition: 'transform 0.4s ease'
+                                }}
+                            />
+
+                            {/* Frosted Glass Blurred Text Overlay - Border None, Reduced Font Size/Weight, Italic */}
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    padding: '0.85rem 1rem',
+                                    background: 'rgba(10, 10, 12, 0.7)',
+                                    backdropFilter: 'blur(12px)',
+                                    WebkitBackdropFilter: 'blur(12px)',
+                                    border: 'none',
+                                }}
+                            >
+                                <span style={{ fontSize: '0.68rem', color: '#60a5fa', fontFamily: 'var(--font-mono)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                                     {item.category}
                                 </span>
-                                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, fontFamily: 'var(--font-mono)', color: 'var(--text-primary)', marginTop: '0.25rem' }}>
+                                <h3 style={{ fontSize: '0.9rem', fontWeight: 400, fontStyle: 'italic', fontFamily: 'var(--font-mono)', color: '#ffffff', marginTop: '0.15rem' }}>
                                     {item.title}
                                 </h3>
                             </div>

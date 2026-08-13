@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from './Footer.module.scss';
-import { ArrowRight, Box } from 'lucide-react';
+import { ArrowRight, Box, X } from 'lucide-react';
 
 const Footer = () => {
+    const router = useRouter();
+    const is3D = router.pathname === '/3d';
     const [showBanner, setShowBanner] = useState(false);
 
     useEffect(() => {
@@ -74,18 +77,27 @@ const Footer = () => {
                         </div>
                         <div className={styles.bannerTextGroup}>
                             <p className={styles.bannerLine1}>
-                                <span className={styles.boldTitle}>Want the fun version?</span>
+                                <span className={styles.boldTitle}>
+                                    {is3D ? '3D Planet Mode Active' : 'Want the fun version?'}
+                                </span>
                             </p>
                             <p className={styles.bannerLine2}>
-                                Explore in 3D mode.
+                                {is3D ? 'Click Exit 3D to return.' : 'Explore in 3D mode.'}
                             </p>
                         </div>
                     </div>
 
-                    <a href="#" className={styles.btn3DPill}>
-                        <span>Enter 3D</span>
-                        <ArrowRight size={14} />
-                    </a>
+                    {is3D ? (
+                        <Link href="/" className={styles.btn3DPill} style={{ background: '#ef4444' }}>
+                            <span>Exit 3D</span>
+                            <X size={14} />
+                        </Link>
+                    ) : (
+                        <Link href="/3d" className={styles.btn3DPill}>
+                            <span>Enter 3D</span>
+                            <ArrowRight size={14} />
+                        </Link>
+                    )}
                 </div>
             )}
         </footer>

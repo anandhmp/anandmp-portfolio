@@ -114,6 +114,13 @@
   opacity: 1;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
   margin-bottom: 0.5rem;
+
+  @media (min-width: 768px) {
+    [data-theme='light'] & {
+      color: #000000;
+      text-shadow: none;
+    }
+  }
 }
 
 .iconMargin {
@@ -139,6 +146,13 @@
   @media (min-width: 1024px) {
     font-size: 3.25rem;
   }
+
+  @media (min-width: 768px) {
+    [data-theme='light'] & {
+      color: #000000;
+      text-shadow: none;
+    }
+  }
 }
 
 .titleText {
@@ -155,6 +169,13 @@
 
   @media (min-width: 640px) {
     font-size: 1.1rem;
+  }
+
+  @media (min-width: 768px) {
+    [data-theme='light'] & {
+      color: #18181b;
+      text-shadow: none;
+    }
   }
 }
 
