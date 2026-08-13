@@ -9,20 +9,45 @@ const Contact = () => {
     const [message, setMessage] = useState('');
     const [status, setStatus] = useState('');
 
-    const handleSubmit = (e) => {
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!name || !email || !message) {
             setStatus('error');
+            setErrorMessage('Please fill in all required fields.');
             return;
         }
         setStatus('submitting');
-        setTimeout(() => {
-            setStatus('success');
-            setName('');
-            setEmail('');
-            setMessage('');
-        }, 1000);
+        setErrorMessage('');
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, message }),
+            });
+
+            const data = await res.json().catch(() => ({}));
+
+            if (res.ok) {
+                setStatus('success');
+                setName('');
+                setEmail('');
+                setMessage('');
+            } else {
+                setStatus('error');
+                setErrorMessage(data.error || 'Failed to send message. Please try again.');
+            }
+        } catch (err) {
+            console.error('Submit error:', err);
+            setStatus('error');
+            setErrorMessage('Failed to send message. Please try again.');
+        }
     };
+
 
     const isValid = name.trim().length > 0 && email.trim().length > 0 && email.includes('@') && message.trim().length > 0;
 
@@ -82,7 +107,14 @@ const Contact = () => {
                         />
                     </div>
 
+                    {status === 'error' && errorMessage && (
+                        <div style={{ color: '#ef4444', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', marginBottom: '1rem' }}>
+                            ⚠️ {errorMessage}
+                        </div>
+                    )}
+
                     <div className={styles.formFooter}>
+
                         <div className={styles.charCounter}>
                             {message.length}/500 characters
                         </div>
