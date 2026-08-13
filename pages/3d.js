@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import Header from '../blocks/Header/Header';
 import Hero from '../blocks/Hero/Hero';
 import StatsBanner from '../blocks/Stats/StatsBanner';
@@ -33,12 +34,20 @@ export default function ThreeDimensionPage() {
 
     return (
         <div data-theme="dark" style={{ background: '#0a0a0c', color: '#ffffff', minHeight: '100vh', position: 'relative' }}>
+            <NextSeo
+                title="3D Interactive World | Anand MP"
+                description="Explore Anand's portfolio in an immersive, interactive 3D planet space environment powered by Three.js."
+                canonical="https://anand.webstrike.in/3d"
+                openGraph={{
+                    url: "https://anand.webstrike.in/3d",
+                    title: "3D Interactive World | Anand MP",
+                    description: "Explore Anand's portfolio in an immersive, interactive 3D planet space environment powered by Three.js.",
+                }}
+            />
             <Head>
-                <title>Anand | 3D Interactive Portfolio World</title>
-                <meta name="description" content="Explore Anand's portfolio in an interactive 3D planet space experience." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
+
 
             {/* Interactive Three.js Planet Space Canvas */}
             <ThreePlanetCanvas />

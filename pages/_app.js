@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { DefaultSeo } from "next-seo";
+import SEO from "../next-seo.config";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -16,7 +18,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <DefaultSeo {...SEO} />
       <Component {...pageProps} />
     </>
   );
 }
+

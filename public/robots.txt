@@ -1,5 +1,21 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://www.skillhaara.com/sitemap.xml
-Host: https://www.skillhaara.com
+# Allow AI crawlers explicitly
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://anand.webstrike.in/sitemap.xml
+Host: https://anand.webstrike.in

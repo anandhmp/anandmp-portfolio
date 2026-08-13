@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NextSeo } from 'next-seo';
 import Header from '../blocks/Header/Header';
 import Footer from '../blocks/Footer/Footer';
 import { Camera } from 'lucide-react';
@@ -7,6 +8,7 @@ export default function PhotographyPage() {
     const [displayDecorations, setDisplayDecorations] = useState(true);
 
     const photos = [
+
         {
             title: "Urban Architecture & Light",
             category: "Architecture",
@@ -17,11 +19,11 @@ export default function PhotographyPage() {
             category: "Minimalism",
             url: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80"
         },
-        {
-            title: "Street Shadows & Perspectives",
-            category: "Street",
-            url: "https://images.unsplash.com/photo-1477959858617-67f30ac4ce78?auto=format&fit=crop&w=1000&q=80"
-        },
+        // {
+        //     title: "Street Shadows & Perspectives",
+        //     category: "Street",
+        //     url: "https://images.unsplash.com/photo-1477959858617-67f30ac4ce78?auto=format&fit=crop&w=1000&q=80"
+        // },
         {
             title: "Cyberpunk Night Lights",
             category: "Night",
@@ -31,7 +33,18 @@ export default function PhotographyPage() {
 
     return (
         <>
+            <NextSeo
+                title="Photography Portfolio | Anand MP"
+                description="Visual portfolio capturing urban landscapes, architecture, minimalist geometry, and low-light visual art by Anand MP."
+                canonical="https://anand.webstrike.in/photography"
+                openGraph={{
+                    url: "https://anand.webstrike.in/photography",
+                    title: "Photography Portfolio | Anand MP",
+                    description: "Visual portfolio capturing urban landscapes, architecture, minimalist geometry, and low-light visual art by Anand MP.",
+                }}
+            />
             <Header displayDecorations={displayDecorations} setDisplayDecorations={setDisplayDecorations} />
+
             <main style={{ maxWidth: '1024px', margin: '0 auto', padding: '3rem 1.5rem' }}>
                 <div style={{ marginBottom: '2.5rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#3b82f6', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>

@@ -1,0 +1,38 @@
+# Anand MP
+
+> Full-Stack Engineer, Product Architect & Founder based in Trivandrum, India.
+
+Anand MP is a full-stack engineer and product builder specializing in scalable web applications, modern UI/UX design, AI solutions, and SaaS platforms. He is the founder/lead at Webstrike and Pronexus, bringing over 5 years of hands-on experience across frontend design systems, high-concurrency Node.js microservices, cloud deployments, and AI integrations.
+
+## Core Capabilities & Expertise
+
+- **Full-Stack Web Development**: Next.js 16, React 19, TypeScript, JavaScript (ESNext), SCSS Modules, TailwindCSS.
+- **Backend & API Systems**: Node.js, Express, NestJS, RESTful APIs, GraphQL, PostgreSQL, MongoDB, Prisma ORM, Redis.
+- **Cloud & DevOps**: AWS (EC2, S3, CloudFront), Vercel, Docker, CI/CD pipelines, NGINX.
+- **AI & Automation**: OpenAI API integration, LangChain, PyTorch, Vector Databases, automation bots.
+- **3D & Interactive Web**: Three.js, WebGL, Framer Motion, AOS animations.
+
+## Key Projects & Ventures
+
+- **Webstrike**: Digital solutions studio specializing in custom web applications, SaaS platforms, and enterprise solutions.
+- **Pronexus**: Software venture for scalable professional tools and AI integrations.
+- **Interactive 3D Portfolio**: Immersive space-themed interactive WebGL showcase built with Next.js and Three.js.
+
+## Site Structure & Key Endpoints
+
+- [Home](https://anand.webstrike.in/): Overview, bio, mission, featured experience, projects, and contact form.
+- [Work](https://anand.webstrike.in/work): Portfolio of featured projects, web apps, and technical solutions.
+- [Experience](https://anand.webstrike.in/experience): Professional career history, roles, and engineering milestones.
+- [Technology](https://anand.webstrike.in/technology): Detailed technical stack breakdown, languages, tools, and platforms.
+- [Resume](https://anand.webstrike.in/resume): Interactive curriculum vitae and downloadable PDF resume.
+- [Photography](https://anand.webstrike.in/photography): Visual art, architecture, and urban photography portfolio.
+- [3D Experience](https://anand.webstrike.in/3d): Interactive 3D planet canvas web experience.
+- [Contact](https://anand.webstrike.in/contact): Direct contact channels and message form.
+
+## Contact Information
+
+- **Website**: https://anand.webstrike.in/
+- **Location**: Trivandrum, Kerala, India
+- **Email**: anandmpmtd@gmail.com
+- **GitHub**: https://github.com/anandmp
+- **LinkedIn**: https://linkedin.com/in/anandmp

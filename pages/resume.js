@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NextSeo } from 'next-seo';
 import Header from '../blocks/Header/Header';
 import Footer from '../blocks/Footer/Footer';
 import { FileText, Download } from 'lucide-react';
@@ -8,8 +9,19 @@ export default function ResumePage() {
 
     return (
         <>
+            <NextSeo
+                title="Resume & Curriculum Vitae | Anand MP"
+                description="Interactive resume of Anand MP - Full-Stack Software Engineer & Founder. View skills, experience, and competencies."
+                canonical="https://anand.webstrike.in/resume"
+                openGraph={{
+                    url: "https://anand.webstrike.in/resume",
+                    title: "Resume & Curriculum Vitae | Anand MP",
+                    description: "Interactive resume of Anand MP - Full-Stack Software Engineer & Founder. View skills, experience, and competencies.",
+                }}
+            />
             <Header displayDecorations={displayDecorations} setDisplayDecorations={setDisplayDecorations} />
             <main style={{ maxWidth: '1024px', margin: '0 auto', padding: '3rem 1.5rem' }}>
+
                 <div style={{ marginBottom: '2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
                     <div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#3b82f6', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>
