@@ -387,7 +387,7 @@
 .themeSelect {
   padding: 0.45rem 1rem;
   border-radius: 0.6rem;
-  background: var(--bg-subtle);
+  background: #18181b;
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   font-size: 0.88rem;
@@ -395,6 +395,22 @@
   outline: none;
   cursor: pointer;
   transition: border-color 0.2s ease;
+
+  option {
+    background-color: #18181b;
+    color: #ffffff;
+    padding: 0.5rem;
+  }
+
+  [data-theme='light'] & {
+    background: #ffffff;
+    color: #09090b;
+
+    option {
+      background-color: #ffffff;
+      color: #09090b;
+    }
+  }
 
   &:hover {
     border-color: var(--border-hover);

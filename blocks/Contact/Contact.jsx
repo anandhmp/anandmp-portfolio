@@ -115,19 +115,19 @@ const Contact = () => {
                         <ArrowRight size={14} className={styles.pillArrow} />
                     </a>
 
-                    <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className={styles.socialPill}>
+                    <a href="https://discord.com/users/anand_mp1704" target="_blank" rel="noopener noreferrer" className={styles.socialPill}>
                         <SiDiscord size={16} color="#5865F2" className={styles.pillIcon} />
                         <span>Discord</span>
                         <ArrowRight size={14} className={styles.pillArrow} />
                     </a>
 
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialPill}>
+                    <a href="https://x.com/AnandMP07" target="_blank" rel="noopener noreferrer" className={styles.socialPill}>
                         <SiX size={14} className={styles.pillIcon} />
                         <span>Twitter / X</span>
                         <ArrowRight size={14} className={styles.pillArrow} />
                     </a>
 
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialPill}>
+                    <a href="https://www.instagram.com/official.anandmp/" target="_blank" rel="noopener noreferrer" className={styles.socialPill}>
                         <SiInstagram size={16} color="#E4405F" className={styles.pillIcon} />
                         <span>Instagram</span>
                         <ArrowRight size={14} className={styles.pillArrow} />

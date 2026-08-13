@@ -181,3 +181,40 @@
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
   }
 }
+
+@media (max-width: 640px) {
+  .banner3D {
+    bottom: 1rem;
+    width: calc(100% - 1.5rem);
+    padding: 0.55rem 0.75rem;
+    gap: 0.5rem;
+    border-radius: 1rem;
+  }
+
+  .bannerLeft {
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .cubeIconBox {
+    width: 32px;
+    height: 32px;
+  }
+
+  .bannerTextGroup {
+    font-size: 0.74rem;
+    min-width: 0;
+  }
+
+  .bannerLine2 {
+    white-space: normal;
+    font-size: 0.7rem;
+    overflow: visible;
+  }
+
+  .btn3DPill {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+}

@@ -6,35 +6,21 @@ const Experience = () => {
     const experiences = [
         {
             company: 'Webstrike Solutions LLP',
-            role: 'Co-Founder & Developer',
-            period: 'May 2024 - Present',
+            role: 'Software Engineer',
+            period: 'Feb 2024 - Present',
             isLive: true,
             location: 'Trivandrum, India',
             logoType: 'webstrike',
             fullLogo: '/assets/logos/webstrike_full.png',
-            subtitle: 'Digital marketing technology & Agentic AI software company',
+            subtitle: 'Digital marketing technology, SaaS eCommerce engines & Agentic AI solutions company',
             points: [
                 '— Co-founded Webstrike Solutions LLP, driving technical strategy, digital marketing tech, and Agentic AI innovation.',
-                '— Architected Agentic AI systems, RAG (Retrieval-Augmented Generation) pipelines, and Node.js backend services.',
-                '— Implemented DevOps automation pipelines and cloud infrastructure for client SaaS platforms and marketing tools.'
-            ],
-            tech: ['Agentic AI', 'RAG', 'Node.js', 'DevOps', 'Next.js', 'Digital Marketing']
-        },
-        {
-            company: 'Skartio AI Cloud',
-            role: 'Software Engineer',
-            period: 'May 2024 - Present',
-            isLive: true,
-            location: 'Trivandrum, India',
-            logoType: 'skartio',
-            fullLogo: '/assets/logos/skartio_full.png',
-            subtitle: 'SaaS-based eCommerce engine & interactive theme ecosystem',
-            points: [
                 '— Architected and developed SaaS-based eCommerce platforms and high-converting business themes for merchants.',
                 '— Built custom drag-and-drop Page Builder and visual Editor systems empowering non-technical users to design web pages.',
-                '— Optimized frontend rendering performance, theme customization engines, and modular UI component libraries.'
+                '— Architected Agentic AI systems, RAG (Retrieval-Augmented Generation) pipelines, and Node.js backend services.',
+                '— Implemented DevOps automation pipelines, cloud infrastructure, and optimized modular UI component libraries.'
             ],
-            tech: ['React', 'Next.js', 'Page Builder', 'SCSS', 'SaaS Architecture']
+            tech: ['Agentic AI', 'RAG', 'Page Builder', 'Node.js', 'DevOps', 'Next.js', 'SaaS Engine']
         },
         {
             company: 'Mashupstack',

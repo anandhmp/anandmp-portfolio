@@ -48,8 +48,9 @@ const Footer = () => {
                     <h4 className={styles.colTitle}>Social</h4>
                     <ul className={styles.linkList}>
                         <li><a href="https://github.com/anandhmp" target="_blank" rel="noopener noreferrer">Github</a></li>
-                        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                        <li><a href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                        <li><a href="https://www.instagram.com/official.anandmp/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://discord.com/users/anand_mp1704" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                        <li><a href="https://x.com/AnandMP07" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
                     </ul>
                 </div>
 
@@ -73,10 +74,10 @@ const Footer = () => {
                         </div>
                         <div className={styles.bannerTextGroup}>
                             <p className={styles.bannerLine1}>
-                                <span className={styles.boldTitle}>Want the fun version?</span> Same portfolio,
+                                <span className={styles.boldTitle}>Want the fun version?</span>
                             </p>
                             <p className={styles.bannerLine2}>
-                                but you fly through a little planet.
+                                Explore in 3D mode.
                             </p>
                         </div>
                     </div>

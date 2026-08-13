@@ -1,28 +1,28 @@
 import React from 'react';
 import styles from './StatsBanner.module.scss';
-import { Star, GitGraph, GitFork, Users } from 'lucide-react';
+import { FolderCode, Award, Cpu, Zap } from 'lucide-react';
 
 const StatsBanner = () => {
     const stats = [
         {
-            icon: <Star size={18} />,
-            label: '180 stars',
-            href: 'https://github.com/anandhmp'
+            icon: <FolderCode size={18} color="#3b82f6" />,
+            label: '50+ Projects',
+            href: '#projects'
         },
         {
-            icon: <GitGraph size={18} />,
-            label: '6.33K commits',
-            href: 'https://github.com/anandhmp'
+            icon: <Award size={18} color="#10b981" />,
+            label: '5+ Years Learning & Building',
+            href: '#experience'
         },
         {
-            icon: <GitFork size={18} />,
-            label: '18 repositories forks',
-            href: 'https://github.com/anandhmp'
+            icon: <Cpu size={18} color="#8b5cf6" />,
+            label: '15+ Technologies',
+            href: '/technology'
         },
         {
-            icon: <Users size={18} />,
-            label: '614 Github followers',
-            href: 'https://github.com/anandhmp?tab=followers'
+            icon: <Zap size={18} color="#f59e0b" />,
+            label: '100% Passion for Development',
+            href: '#about'
         }
     ];
 
@@ -32,8 +32,6 @@ const StatsBanner = () => {
                 <a
                     key={idx}
                     href={stat.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className={styles.statItem}
                 >
                     <span className={styles.iconWrapper}>{stat.icon}</span>

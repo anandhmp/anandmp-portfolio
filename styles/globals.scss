@@ -57,6 +57,16 @@
   padding: 0;
 }
 
+select option {
+  background-color: #18181b;
+  color: #ffffff;
+
+  [data-theme='light'] & {
+    background-color: #ffffff;
+    color: #09090b;
+  }
+}
+
 a,
 a:hover,
 a:focus,
