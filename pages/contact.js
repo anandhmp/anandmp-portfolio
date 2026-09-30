@@ -10,6 +10,7 @@ export default function ContactPage() {
     return (
         <>
             <NextSeo
+                noindex={true}
                 title="Contact & Get in Touch | Anand MP"
                 description="Get in touch with Anand MP for software development projects, technical consultations, or collaborations."
                 canonical="https://anand.webstrike.in/contact"

@@ -34,6 +34,7 @@ export default function PhotographyPage() {
     return (
         <>
             <NextSeo
+                noindex={true}
                 title="Photography Portfolio | Anand MP"
                 description="Visual portfolio capturing urban landscapes, architecture, minimalist geometry, and low-light visual art by Anand MP."
                 canonical="https://anand.webstrike.in/photography"

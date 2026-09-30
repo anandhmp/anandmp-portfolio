@@ -10,6 +10,7 @@ export default function ResumePage() {
     return (
         <>
             <NextSeo
+                noindex={true}
                 title="Resume & Curriculum Vitae | Anand MP"
                 description="Interactive resume of Anand MP - Co-Founder & Software Engineer at Webstrike Solutions. View skills, experience, and competencies."
                 canonical="https://anand.webstrike.in/resume"

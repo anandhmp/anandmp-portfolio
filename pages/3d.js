@@ -35,6 +35,7 @@ export default function ThreeDimensionPage() {
     return (
         <div data-theme="dark" style={{ background: '#0a0a0c', color: '#ffffff', minHeight: '100vh', position: 'relative' }}>
             <NextSeo
+                noindex={true}
                 title="3D Interactive World | Anand MP"
                 description="Explore Anand's portfolio in an immersive, interactive 3D planet space environment powered by Three.js."
                 canonical="https://anand.webstrike.in/3d"

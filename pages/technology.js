@@ -10,6 +10,7 @@ export default function TechnologyPage() {
     return (
         <>
             <NextSeo
+                noindex={true}
                 title="Technologies & Skills | Anand MP"
                 description="Technologies, frameworks, programming languages, and toolchains mastered by Anand MP."
                 canonical="https://anand.webstrike.in/technology"

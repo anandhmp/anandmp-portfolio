@@ -10,6 +10,7 @@ export default function WorkPage() {
     return (
         <>
             <NextSeo
+                noindex={true}
                 title="Projects & Works | Anand MP"
                 description="Explore selected projects, full-stack applications, SaaS tools, and software solutions built by Anand MP."
                 canonical="https://anand.webstrike.in/work"

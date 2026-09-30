@@ -10,6 +10,7 @@ export default function ExperiencePage() {
     return (
         <>
             <NextSeo
+                noindex={true}
                 title="Professional Experience | Anand MP"
                 description="Engineering leadership, full-stack software development experience, and technical accomplishments of Anand MP."
                 canonical="https://anand.webstrike.in/experience"
