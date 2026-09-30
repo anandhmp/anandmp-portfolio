@@ -40,7 +40,7 @@ export default function Home() {
             "@type": "Organization",
             "name": "Webstrike Solutions"
         },
-        "description": "Software Engineer at Webstrike Solutions building high-performance web applications, AI solutions, and SaaS products.",
+        "description": "Software Engineer building high-performance web applications, AI solutions, and SaaS products.",
         "sameAs": [
             "https://github.com/anandmp",
             "https://linkedin.com/in/anandmp"

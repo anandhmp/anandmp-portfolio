@@ -22,17 +22,18 @@ const Projects = () => {
         {
             id: 'page-builder',
             title: 'Page Builder & Page Editor',
-            domain: 'skartio.com',
+            domain: 'webstrike.in',
             period: 'Nov 2024 - Feb 2025',
             image: '/assets/projects/pagebuilder.png',
-            shortDesc: 'Fully customizable web page management system developed for Skartio’s SaaS platform. This tool was built to enable non-developers and business users to take full control of content and layouts...',
-            fullDesc: 'Fully customizable web page management system developed for Skartio’s SaaS platform. This tool was built to enable non-developers and business users to take full control of their website content and layout, eliminating the need for technical support.\n\nKey Capabilities:\n• Visual Drag-and-Drop Interface\n• Live Preview & Real-Time Editing\n• Theme Customization & Layout Controls\n• Page Management Tools & Built-in Analytics\n• SEO & Metadata Management\n• Instant No-Code Deployment',
+            shortDesc: 'A customizable web page management system developed for a SaaS eCommerce platform, enabling non-technical users and business teams to create, customize, and manage website pages without developer support.',
+            fullDesc: 'A customizable web page management system developed for a SaaS eCommerce platform, enabling non-technical users and business teams to create, customize, and manage website pages without developer support.\n\nKey Features:\n• Visual drag-and-drop page builder\n• Live preview and real-time editing\n• Custom HTML editor and page management\n• Theme, color, font, and layout customization\n• SEO and metadata management\n• Built-in analytics\n• HTML page upload and import\n• No-code page publishing and deployment',
             tech: [
                 { name: 'Next.js', icon: <SiNextdotjs /> },
-                { name: 'React', icon: <SiReact color="#61DAFB" /> },
+                { name: 'React.js', icon: <SiReact color="#61DAFB" /> },
                 { name: 'TypeScript', icon: <SiTypescript color="#3178C6" /> },
+                { name: 'REST APIs', icon: <Code size={14} color="#10B981" /> },
                 { name: 'Page Builder', icon: <Layers size={14} color="#38BDF8" /> },
-                { name: 'SEO & Analytics', icon: <Sparkles size={14} color="#EAB308" /> },
+                { name: 'SEO', icon: <Sparkles size={14} color="#EAB308" /> },
             ],
             liveUrl: 'https://webstrike.in',
             caseStudyUrl: '#',
@@ -41,17 +42,18 @@ const Projects = () => {
         {
             id: 'customer-onboarding',
             title: 'Customer Onboarding & Store Launcher',
-            domain: 'skartio.cloud',
+            domain: 'webstrike.in',
             period: 'Nov 2024 - Feb 2025',
             image: '/assets/projects/onboarding.png',
-            shortDesc: 'Automated customer onboarding platform featuring live domain search, instant domain acquisition, tiered pricing model selection, and zero-downtime eCommerce store launching...',
-            fullDesc: 'End-to-end customer onboarding platform integrated with live domain search and instant domain acquisition APIs. Enables clients to search available domain names, acquire domains, submit registration details, select appropriate pricing plans, and instantly launch their targeted eCommerce store model (B2C, B2B, Dropshipping, Hybrid Commerce Cloud, Marketplace, or Enterprise Cloud flow) with zero technical friction.',
+            shortDesc: 'An end-to-end onboarding system designed to guide customers from domain search and selection to the configuration and launch of their eCommerce store.',
+            fullDesc: 'An end-to-end onboarding system designed to guide customers from domain search and selection to the configuration and launch of their eCommerce store.\n\nKey Features:\n• Domain search and availability checking\n• Domain selection and purchase integration\n• Business information setup\n• Real-time location detection using latitude and longitude\n• Automated business location setup\n• Store configuration and customization\n• Guided onboarding workflow\n• Live setup progress and status\n• Instant store launch',
             tech: [
                 { name: 'Next.js', icon: <SiNextdotjs /> },
-                { name: 'Domain Search API', icon: <Globe size={14} color="#38BDF8" /> },
-                { name: 'Automated Onboarding', icon: <Code size={14} color="#10B981" /> },
-                { name: 'B2B / B2C Cloud', icon: <ShoppingBag size={14} color="#F59E0B" /> },
                 { name: 'Node.js', icon: <SiNodedotjs color="#5FA04E" /> },
+                { name: 'REST APIs', icon: <Code size={14} color="#10B981" /> },
+                { name: 'Domain APIs', icon: <Globe size={14} color="#38BDF8" /> },
+                { name: 'JavaScript', icon: <Code size={14} color="#F7DF1E" /> },
+                { name: 'Automated Onboarding', icon: <Sparkles size={14} color="#10B981" /> },
             ],
             liveUrl: 'https://webstrike.in',
             caseStudyUrl: '#',
@@ -63,13 +65,15 @@ const Projects = () => {
             domain: 'webstrike.in',
             period: 'Nov 2024 - Feb 2025',
             image: '/assets/projects/unified_business.png',
-            shortDesc: 'A comprehensive business management platform for small enterprises to manage lead pipelines, career portals, corporate blogs, and content without developer dependency...',
-            fullDesc: 'A unified digital management platform tailored for small and medium enterprises to manage lead generation pipelines, career application portals, corporate blogs, and marketing content seamlessly without any developer dependency.',
+            shortDesc: 'A centralized business management platform designed for small and medium-sized businesses to manage their digital operations without depending on developers.',
+            fullDesc: 'A centralized business management platform designed for small and medium-sized businesses to manage their digital operations without depending on developers.\n\nKey Features:\n• Lead management\n• Career and job application management\n• Corporate blog management\n• Content management\n• Centralized business administration\n• Reusable and modular management components',
             tech: [
-                { name: 'React', icon: <SiReact color="#61DAFB" /> },
+                { name: 'React.js', icon: <SiReact color="#61DAFB" /> },
                 { name: 'Next.js', icon: <SiNextdotjs /> },
-                { name: 'Lead Manager', icon: <Sparkles size={14} color="#38BDF8" /> },
-                { name: 'CMS Engine', icon: <FileText size={14} color="#10B981" /> },
+                { name: 'JavaScript', icon: <Code size={14} color="#F7DF1E" /> },
+                { name: 'REST APIs', icon: <Code size={14} color="#10B981" /> },
+                { name: 'MongoDB', icon: <Layers size={14} color="#47A248" /> },
+                { name: 'CMS', icon: <FileText size={14} color="#38BDF8" /> },
             ],
             liveUrl: 'https://webstrike.in',
             caseStudyUrl: '#',
@@ -78,17 +82,19 @@ const Projects = () => {
         {
             id: 'ecommerce-theme',
             title: 'Customizable eCommerce Web Theme',
-            domain: 'stepzo.com',
+            domain: 'webstrike.in',
             period: 'Nov 2024 - Feb 2025',
             image: '/assets/projects/ecommerce_theme.png',
-            shortDesc: 'A scalable and flexible eCommerce web application theme built with Next.js, featuring SEO optimization, PWA support, code splitting, image optimization, and built-in web analytics...',
-            fullDesc: 'A scalable and flexible eCommerce web application theme built with Next.js, featuring SEO optimization, PWA support, code splitting, image optimization, and built-in web analytics. Empowers non-developers to fully customize their storefronts without any developer dependency.',
+            shortDesc: 'A scalable and customizable eCommerce theme built for SaaS-based online stores, providing businesses with a flexible storefront that can be customized without direct developer involvement.',
+            fullDesc: 'A scalable and customizable eCommerce theme built for SaaS-based online stores, providing businesses with a flexible storefront that can be customized without direct developer involvement.\n\nKey Features:\n• Responsive eCommerce interface\n• Customizable storefront components\n• SEO optimization\n• Progressive Web App support\n• Code splitting\n• Image optimization\n• Web analytics integration\n• Performance-focused architecture',
             tech: [
                 { name: 'Next.js', icon: <SiNextdotjs /> },
+                { name: 'React.js', icon: <SiReact color="#61DAFB" /> },
+                { name: 'JavaScript', icon: <Code size={14} color="#F7DF1E" /> },
                 { name: 'PWA', icon: <Globe size={14} color="#38BDF8" /> },
-                { name: 'SEO Optimization', icon: <Sparkles size={14} color="#EAB308" /> },
+                { name: 'SEO', icon: <Sparkles size={14} color="#EAB308" /> },
                 { name: 'Web Analytics', icon: <Code size={14} color="#10B981" /> },
-                { name: 'eCommerce Engine', icon: <ShoppingBag size={14} color="#F59E0B" /> },
+                { name: 'eCommerce', icon: <ShoppingBag size={14} color="#F59E0B" /> },
             ],
             liveUrl: 'https://webstrike.in',
             caseStudyUrl: '#',
@@ -187,7 +193,7 @@ const Projects = () => {
                 Featured Projects<span className={styles.blueDot}>.</span>
             </h2>
             <p className={styles.subtitle}>
-                High-converting Page Builders, automated store launchers, and enterprise SaaS business platforms.
+                Selected projects focused on SaaS eCommerce, no-code website management, automated onboarding, and business management platforms.
             </p>
 
             <div className={styles.projectsList}>
