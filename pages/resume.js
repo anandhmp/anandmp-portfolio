@@ -12,12 +12,12 @@ export default function ResumePage() {
             <NextSeo
                 noindex={true}
                 title="Resume & Curriculum Vitae | Anand MP"
-                description="Interactive resume of Anand MP - Co-Founder & Software Engineer at Webstrike Solutions. View skills, experience, and competencies."
+                description="Interactive resume of Anand MP - Software Engineer at Webstrike Solutions. View skills, experience, and competencies."
                 canonical="https://anand.webstrike.in/resume"
                 openGraph={{
                     url: "https://anand.webstrike.in/resume",
                     title: "Resume & Curriculum Vitae | Anand MP",
-                    description: "Interactive resume of Anand MP - Co-Founder & Software Engineer at Webstrike Solutions. View skills, experience, and competencies.",
+                    description: "Interactive resume of Anand MP - Software Engineer at Webstrike Solutions. View skills, experience, and competencies.",
                 }}
             />
             <Header displayDecorations={displayDecorations} setDisplayDecorations={setDisplayDecorations} />
@@ -33,7 +33,7 @@ export default function ResumePage() {
                             Interactive Resume<span style={{ color: '#3b82f6' }}>.</span>
                         </h1>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontFamily: 'var(--font-mono)' }}>
-                            Anand — Co-Founder & Software Engineer @ Webstrike
+                            Anand — Software Engineer @ Webstrike
                         </p>
                     </div>
 
@@ -67,7 +67,7 @@ export default function ResumePage() {
                             Anand MP
                         </h2>
                         <p style={{ color: '#3b82f6', fontSize: '0.95rem', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>
-                            Co-Founder & Software Engineer @ Webstrike Solutions
+                            Software Engineer @ Webstrike Solutions
                         </p>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', fontFamily: 'var(--font-mono)', marginTop: '0.5rem' }}>
                             Trivandrum, Kerala, India • 5+ Years Experience • anandmpmtd@gmail.com

@@ -8,7 +8,7 @@ const About = () => {
     const handleCopy = () => {
         const text = `const developer = {
   name: "Anand MP",
-  title: "Co-Founder & Software Engineer @ Webstrike",
+  title: "Software Engineer",
   experienceYears: 5,
   coreSkills: ["React / Next.js", "Node.js / NestJS", "Cloud Architecture"],
   passion: "Transforming ambitious ideas into production-grade SaaS products.",
@@ -30,13 +30,10 @@ const About = () => {
 
                     <div className={styles.prose}>
                         <p>
-                            I started coding from scratch 5 years ago in 2020, beginning with HTML, CSS, and JavaScript to build websites.
+                            Software Engineer focused on building modern, scalable web applications and SaaS products. My core stack includes JavaScript, React, Next.js, Angular, Node.js, and FastAPI, with hands-on experience in REST APIs, authentication, state management, database integration, and third-party API integrations.
                         </p>
                         <p>
-                            My first project was a simple website built with HTML, CSS, and JavaScript (~mid-2020).
-                        </p>
-                        <p>
-                            As I progressed, I mastered React.js and Next.js. Now, as Co-founder and Software Engineer at Webstrike Solutions, I work with cutting-edge tech stacks to build production-ready SaaS applications.
+                            I enjoy turning ideas into practical, user-focused products, from digital platforms to SaaS applications and custom web solutions. I’m passionate about writing clean, maintainable code, improving application performance, and continuously exploring new technologies and development practices.
                         </p>
                     </div>
 
@@ -85,11 +82,11 @@ const About = () => {
                                 <code>
                                     <span className={styles.comment}>/**</span>{'\n'}
                                     <span className={styles.comment}> * @developer Anand MP</span>{'\n'}
-                                    <span className={styles.comment}> * @role Co-Founder & Software Engineer @ Webstrike</span>{'\n'}
+                                    <span className={styles.comment}> * @role Software Engineer</span>{'\n'}
                                     <span className={styles.comment}> */</span>{'\n'}{'\n'}
                                     <span className={styles.keyword}>const</span> <span className={styles.variable}>developer</span> = &#123;{'\n'}
                                     &nbsp;&nbsp;<span className={styles.key}>name</span>: <span className={styles.string}>"Anand MP"</span>,{'\n'}
-                                    &nbsp;&nbsp;<span className={styles.key}>title</span>: <span className={styles.string}>"Co-Founder & Software Engineer"</span>,{'\n'}
+                                    &nbsp;&nbsp;<span className={styles.key}>title</span>: <span className={styles.string}>"Software Engineer"</span>,{'\n'}
                                     &nbsp;&nbsp;<span className={styles.key}>experience</span>: <span className={styles.number}>5</span> <span className={styles.comment}>// Years since 2020</span>,{'\n'}
                                     &nbsp;&nbsp;<span className={styles.key}>coreSkills</span>: [{'\n'}
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span className={styles.string}>"React / Next.js"</span>,{'\n'}

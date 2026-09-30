@@ -1,8 +1,8 @@
 # Anand MP
 
-> Full-Stack Engineer, Product Architect & Founder based in Trivandrum, India.
+> Software Engineer based in Trivandrum, India.
 
-Anand MP is a full-stack engineer and product builder specializing in scalable web applications, modern UI/UX design, AI solutions, and SaaS platforms. He is the founder/lead at Webstrike and Pronexus, bringing over 5 years of hands-on experience across frontend design systems, high-concurrency Node.js microservices, cloud deployments, and AI integrations.
+Anand MP is a software engineer specializing in scalable web applications, modern UI/UX design, and SaaS platforms. He works at Webstrike Solutions, bringing hands-on experience across React, Next.js, Node.js, and cloud deployments.
 
 ## Core Capabilities & Expertise
 

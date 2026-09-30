@@ -5,37 +5,52 @@ import { ArrowUpRight, Globe, FileText, ArrowRight } from 'lucide-react';
 const Experience = () => {
     const experiences = [
         {
-            company: 'Webstrike Solutions LLP',
-            role: 'Co-Founder & Software Engineer',
-            period: 'Feb 2024 - Present',
+            company: 'Webstrike Solutions',
+            role: 'Software Engineer',
+            period: 'October 2024 - Present',
             isLive: true,
             location: 'Trivandrum, India',
             logoType: 'webstrike',
             fullLogo: '/assets/logos/webstrike_full.png',
-            subtitle: 'Digital marketing technology, SaaS eCommerce engines & Agentic AI solutions company',
+            subtitle: 'SaaS eCommerce & Business Platform Development',
             points: [
-                '— Co-founded Webstrike Solutions LLP, driving technical strategy, digital marketing tech, and Agentic AI innovation.',
-                '— Architected and developed SaaS-based eCommerce platforms and high-converting business themes for merchants.',
-                '— Built custom drag-and-drop Page Builder and visual Editor systems empowering non-technical users to design web pages.',
-                '— Architected Agentic AI systems, RAG (Retrieval-Augmented Generation) pipelines, and Node.js backend services.',
-                '— Implemented DevOps automation pipelines, cloud infrastructure, and optimized modular UI component libraries.'
+                '— Developing SaaS-based eCommerce and business themes using modern web technologies.',
+                '— Building scalable and customizable web applications using React.js, Next.js, JavaScript, TypeScript, and Node.js.',
+                '— Designed and developed a custom Page Builder and Editor that enables non-technical users to create, edit, customize, and manage web pages without developer support.',
+                '— Implemented drag-and-drop page creation, live preview, HTML editing, page management, theme customization, and SEO-related functionality.',
+                '— Developed customer onboarding workflows covering domain search, domain selection, business details, store configuration, and store launch.',
+                '— Implemented real-time location detection using latitude and longitude as part of the customer onboarding process.',
+                '— Developed customizable eCommerce themes with features such as responsive layouts, SEO optimization, PWA support, code splitting, image optimization, and web analytics.',
+                '— Built business-oriented web solutions with modules for lead management, blogs, careers, and content management.',
+                '— Developed and integrated REST APIs for frontend and backend communication.',
+                '— Worked with MongoDB for application data management and backend integrations.',
+                '— Used Git and GitHub for version control and collaborative development.',
+                '— Worked with development and project management tools including Jira, Slack, Trello, and Teams.',
+                '— Deployed and maintained web applications using platforms such as AWS and Cloudflare.'
             ],
-            tech: ['Agentic AI', 'RAG', 'Page Builder', 'Node.js', 'DevOps', 'Next.js', 'SaaS Engine']
+            tech: ['Next.js', 'React.js', 'JavaScript', 'TypeScript', 'Node.js', 'Express.js', 'REST APIs', 'MongoDB', 'Redux', 'Axios', 'HTML5', 'CSS3', 'Bootstrap', 'Git', 'GitHub']
         },
         {
             company: 'Mashupstack',
-            role: 'Software Developer',
-            period: 'Aug 2023 - Feb 2024',
+            role: 'Software Developer Intern',
+            period: 'August 2023 - February 2024',
             location: 'Trivandrum, India',
             logoType: 'mashup',
             fullLogo: '/assets/logos/mashupstack_full.png',
-            subtitle: 'Full-stack software engineering & real-time web development',
+            subtitle: 'Real-time web development & full-stack web applications',
             points: [
-                '— Developed real-time web applications using Python Django, Laravel PHP, and modern React frontend architectures.',
-                '— Implemented industry best practices, database ORM queries, and version control workflows under team guidance.',
-                '— Built REST APIs, server-side rendering routes, and dynamic UI components across client production codebases.'
+                '— Contributed to real-time web development projects using modern frontend and backend technologies.',
+                '— Developed responsive and interactive user interfaces using HTML, CSS, JavaScript, React.js, and Bootstrap.',
+                '— Worked on React-based application development using reusable components and structured frontend architectures.',
+                '— Integrated REST APIs with frontend applications and handled API requests and responses using Axios.',
+                '— Worked with backend technologies including Python Django and Laravel PHP as part of full-stack project development.',
+                '— Implemented database operations and worked with backend application logic under the guidance of experienced developers.',
+                '— Used Git and GitHub for source code management and collaborative development.',
+                '— Participated in debugging, testing, feature implementation, and resolving development issues.',
+                '— Followed software development best practices and learned production-oriented development workflows through mentor guidance.',
+                '— Gained practical experience in building and maintaining real-world web applications in a team environment.'
             ],
-            tech: ['Python', 'Django', 'Laravel', 'PHP', 'React', 'Git']
+            tech: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Bootstrap', 'Python', 'Django', 'Laravel', 'PHP', 'REST APIs', 'Axios', 'Git', 'GitHub']
         }
     ];
 
@@ -55,7 +70,7 @@ const Experience = () => {
                 Experience<span className={styles.blueDot}>.</span>
             </h2>
             <p className={styles.subtitle}>
-                My professional journey from software development to engineering SaaS platforms and co-founding Webstrike Solutions.
+                My professional journey in building scalable web applications, custom SaaS engines, and modern eCommerce platforms.
             </p>
 
             <div className={styles.timelineList}>

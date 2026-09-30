@@ -1,16 +1,16 @@
 const SEO = {
-  title: "Anand MP | Co-Founder & Software Engineer @ Webstrike",
+  title: "Anand MP | Software Engineer @ Webstrike",
   titleTemplate: "%s | Anand MP",
-  defaultTitle: "Anand MP | Co-Founder & Software Engineer @ Webstrike",
-  description: "Co-Founder & Software Engineer at Webstrike Solutions based in Trivandrum building high-performance web applications, AI solutions, and SaaS products.",
+  defaultTitle: "Anand MP | Software Engineer @ Webstrike",
+  description: "Software Engineer at Webstrike Solutions based in Trivandrum building high-performance web applications, AI solutions, and SaaS products.",
   canonical: "https://anand.webstrike.in/",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://anand.webstrike.in/",
     siteName: "Anand MP Portfolio",
-    title: "Anand MP | Co-Founder & Software Engineer @ Webstrike",
-    description: "Co-Founder & Software Engineer at Webstrike Solutions based in Trivandrum building high-performance web applications, AI solutions, and SaaS products.",
+    title: "Anand MP | Software Engineer @ Webstrike",
+    description: "Software Engineer at Webstrike Solutions based in Trivandrum building high-performance web applications, AI solutions, and SaaS products.",
     images: [
       {
         url: "https://anand.webstrike.in/og-image.png",
