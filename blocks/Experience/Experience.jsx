@@ -6,7 +6,7 @@ const Experience = () => {
     const experiences = [
         {
             company: 'Webstrike Solutions LLP',
-            role: 'Software Engineer',
+            role: 'Co-Founder & Software Engineer',
             period: 'Feb 2024 - Present',
             isLive: true,
             location: 'Trivandrum, India',

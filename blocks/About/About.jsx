@@ -8,7 +8,7 @@ const About = () => {
     const handleCopy = () => {
         const text = `const developer = {
   name: "Anand MP",
-  title: "Full-Stack Engineer & Founder",
+  title: "Co-Founder & Software Engineer @ Webstrike",
   experienceYears: 5,
   coreSkills: ["React / Next.js", "Node.js / NestJS", "Cloud Architecture"],
   passion: "Transforming ambitious ideas into production-grade SaaS products.",
@@ -36,7 +36,7 @@ const About = () => {
                             My first project was a simple website built with HTML, CSS, and JavaScript (~mid-2020).
                         </p>
                         <p>
-                            As I progressed, I mastered React.js and Next.js. Now, I work with all the latest tech stacks to build production-ready SaaS applications.
+                            As I progressed, I mastered React.js and Next.js. Now, as Co-founder and Software Engineer at Webstrike Solutions, I work with cutting-edge tech stacks to build production-ready SaaS applications.
                         </p>
                     </div>
 
@@ -85,11 +85,11 @@ const About = () => {
                                 <code>
                                     <span className={styles.comment}>/**</span>{'\n'}
                                     <span className={styles.comment}> * @developer Anand MP</span>{'\n'}
-                                    <span className={styles.comment}> * @role Full-Stack Architect & Founder</span>{'\n'}
+                                    <span className={styles.comment}> * @role Co-Founder & Software Engineer @ Webstrike</span>{'\n'}
                                     <span className={styles.comment}> */</span>{'\n'}{'\n'}
                                     <span className={styles.keyword}>const</span> <span className={styles.variable}>developer</span> = &#123;{'\n'}
                                     &nbsp;&nbsp;<span className={styles.key}>name</span>: <span className={styles.string}>"Anand MP"</span>,{'\n'}
-                                    &nbsp;&nbsp;<span className={styles.key}>title</span>: <span className={styles.string}>"Full-Stack Engineer & SaaS Builder"</span>,{'\n'}
+                                    &nbsp;&nbsp;<span className={styles.key}>title</span>: <span className={styles.string}>"Co-Founder & Software Engineer"</span>,{'\n'}
                                     &nbsp;&nbsp;<span className={styles.key}>experience</span>: <span className={styles.number}>5</span> <span className={styles.comment}>// Years since 2020</span>,{'\n'}
                                     &nbsp;&nbsp;<span className={styles.key}>coreSkills</span>: [{'\n'}
                                     &nbsp;&nbsp;&nbsp;&nbsp;<span className={styles.string}>"React / Next.js"</span>,{'\n'}

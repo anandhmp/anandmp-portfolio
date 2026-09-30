@@ -32,7 +32,7 @@ const Hero = () => {
                             <span className={styles.titleText}>hey, I'm Anand</span> <span className="animate-wave">👋</span>
                         </h1>
                         <p className={styles.bioText}>
-                            FullStack Engineer from Trivandrum, building web applications, Solutions, and real-world SaaS products that push the boundaries of technology.
+                            Software Engineer & Co-Founder of Webstrike Solutions from Trivandrum, building web applications, solutions, and real-world SaaS products that push the boundaries of technology.
                         </p>
                     </div>
 

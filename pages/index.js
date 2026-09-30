@@ -35,12 +35,12 @@ export default function Home() {
         "name": "Anand MP",
         "url": "https://anand.webstrike.in/",
         "image": "https://anand.webstrike.in/og-image.png",
-        "jobTitle": "Full-Stack Engineer & Tech Executive",
+        "jobTitle": "Full Stack Engineer",
         "worksFor": {
             "@type": "Organization",
-            "name": "Webstrike"
+            "name": "Webstrike Solutions"
         },
-        "description": "Full-stack developer, designer, and innovator building web applications, AI solutions, and real-world SaaS products.",
+        "description": "Software Engineer at Webstrike Solutions building high-performance web applications, AI solutions, and SaaS products.",
         "sameAs": [
             "https://github.com/anandmp",
             "https://linkedin.com/in/anandmp"
@@ -50,13 +50,13 @@ export default function Home() {
     return (
         <>
             <NextSeo
-                title="Anand MP | Full-Stack Engineer & Tech Executive"
-                description="Full-stack developer, designer, and innovator building web applications, AI solutions, and real-world SaaS products."
+                title="Anand MP | Software Engineer"
+                description="Software Engineer building high-performance web applications, AI solutions, and SaaS products."
                 canonical="https://anand.webstrike.in/"
                 openGraph={{
                     url: "https://anand.webstrike.in/",
-                    title: "Anand MP | Full-Stack Engineer & Tech Executive",
-                    description: "Full-stack developer, designer, and innovator building web applications, AI solutions, and real-world SaaS products.",
+                    title: "Anand MP | Software Engineer",
+                    description: "Software Engineer building high-performance web applications, AI solutions, and SaaS products.",
                     images: [
                         {
                             url: "https://anand.webstrike.in/og-image.png",
